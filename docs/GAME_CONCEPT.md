@@ -351,7 +351,7 @@ Hardpoints:
 
 The eventual design may allow the player to own multiple ships stored at stations.
 
-This is not required for Prototype 0.1.
+This is not required for the first vertical slice.
 
 ---
 
@@ -913,7 +913,7 @@ The generator can vary:
 
 This can create many stations from a small asset library.
 
-Do not attempt a perfect modular station generator in Prototype 0.1.
+Do not attempt a perfect modular station generator in the first vertical slice.
 
 ---
 
@@ -1129,11 +1129,11 @@ Each task should produce something testable.
 
 ---
 
-# 27. Prototype 0.1
+# 27. First Vertical Slice
 
-The first important milestone is not the infinite galaxy.
+The **first vertical slice** combines **0.1 — Flight Playground**, **0.2 — Combat**, **0.3 — Docking**, and **0.4 — Supercruise** into one playable star system.
 
-It is:
+Its goal is:
 
 > **Make flying through one small test star system fun.**
 
@@ -1164,7 +1164,7 @@ The player should be able to:
 - dock
 - launch again
 
-No procedural galaxy is required for Prototype 0.1.
+No procedural galaxy is required for the first vertical slice.
 
 No economy is required.
 
@@ -1178,10 +1178,11 @@ The goal is to answer:
 
 # 28. Proposed Development Roadmap
 
-## 0.1 — Flight
+## 0.1 — Flight Playground
 
 Implement:
 
+- playable test scene
 - player ship
 - first-person camera
 - mouse steering
@@ -1289,9 +1290,9 @@ This is the first version that should feel like the intended sandbox.
 
 ---
 
-# 29. Prototype 0.1 Suggested First Tasks for Codex
+# 29. First Vertical Slice Suggested Tasks for Codex
 
-The following sequence is recommended.
+The following sequence is recommended across milestones 0.1–0.4. Tasks 1–3 form the Flight Playground (0.1), tasks 4–5 add Combat (0.2), tasks 6–7 add Docking (0.3), and task 8 adds Supercruise (0.4).
 
 ## Task 1 — Create Project Skeleton
 
@@ -1381,9 +1382,9 @@ Do not attempt realistic relativistic travel.
 
 ---
 
-# 30. Desired Feel of Prototype
+# 30. Desired Feel of the First Vertical Slice
 
-When testing Prototype 0.1, prioritize these questions:
+When testing the first vertical slice, prioritize these questions:
 
 - Does the ship feel good to control?
 - Is mouse flight comfortable?

@@ -46,7 +46,7 @@ It contains substantially more product and design context than this file, includ
 - persistence boundaries
 - procedural station ideas
 - asset strategy
-- Prototype 0.1 scope
+- Flight Playground milestone and first vertical slice scope
 - the longer development roadmap
 - features intentionally postponed or out of scope
 
@@ -965,9 +965,29 @@ Before adding a new autoload, consider whether the system can be a normal node o
 
 ---
 
-# 33. Current Target: Prototype 0.1
+# 33. Current Target: 0.1 — Flight Playground
 
-Unless repository state clearly indicates otherwise, the first prototype target is:
+Unless repository state clearly indicates otherwise, the current milestone is **0.1 — Flight Playground**.
+
+Required for 0.1:
+
+- playable test scene
+- first-person player ship and camera
+- mouse steering
+- throttle
+- arcade movement
+- basic HUD
+- retro rendering setup
+
+Combat, docking, and supercruise belong to later milestones:
+
+- **0.2 — Combat**
+- **0.3 — Docking**
+- **0.4 — Supercruise**
+
+## First Vertical Slice
+
+The **first vertical slice** combines milestones **0.1–0.4** into:
 
 ```text
 one playable star system
@@ -984,7 +1004,7 @@ Star
 └── Jump Gate
 ```
 
-Required player capabilities:
+Required player capabilities for the first vertical slice:
 
 - first-person ship control
 - mouse aiming
@@ -995,7 +1015,7 @@ Required player capabilities:
 - docking
 - launch
 
-Not required yet:
+Not required for the first vertical slice:
 
 - procedural galaxy
 - economy
@@ -1004,9 +1024,9 @@ Not required yet:
 
 ---
 
-# 34. Priority Order for Prototype 0.1
+# 34. Priority Order for the First Vertical Slice
 
-When choosing between unfinished systems, prioritize:
+Within the current milestone, follow its requirements above. When choosing between unfinished systems across the first vertical slice, prioritize:
 
 1. ship movement
 2. camera / mouse flight
