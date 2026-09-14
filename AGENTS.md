@@ -152,6 +152,20 @@ Procedural galaxy
 
 Respect the current milestone.
 
+## Milestone Naming
+
+Milestone names are strict and should not be used interchangeably:
+
+- **0.1 — Flight Playground** = flight foundation only
+- **0.2 — Combat** = weapons, damage, and first enemy
+- **0.3 — Docking** = station approach, docking, and launch flow
+- **0.4 — Supercruise** = fast in-system travel
+- **First Vertical Slice** = the combined result of milestones **0.1–0.4**
+
+Do **not** call the complete first vertical slice "Prototype 0.1" or use `0.1` to mean flight + combat + docking + supercruise.
+
+When documentation or task descriptions use ambiguous milestone wording, normalize them to the terminology above.
+
 ---
 
 # 3. Technology

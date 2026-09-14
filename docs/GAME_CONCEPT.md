@@ -1,8 +1,8 @@
-# Project FreeStar — Codex Agent Brief
+# Project FreeStar — Game Concept
 
 ## Purpose
 
-This document is the working product and technical brief for a Godot game project being developed on Omarchy with heavy use of AI-assisted / vibe coding.
+This document is the primary game-design and product brief for Project FreeStar, a Godot game developed on Omarchy with heavy use of AI-assisted / vibe coding.
 
 The game is inspired primarily by **Freelancer** and **Elite**, but is intended to have its own identity:
 
@@ -10,7 +10,9 @@ The game is inspired primarily by **Freelancer** and **Elite**, but is intended 
 
 The player is an independent pilot who can take missions, hunt pirates, become a pirate, explore unknown systems, trade, improve their reputation, buy better equipment and ships, and travel indefinitely through procedurally generated space.
 
-This file should be treated as the main high-level reference for implementation decisions unless a newer project document explicitly overrides it.
+This file is the primary source of truth for the game's intended design, scope, gameplay direction, and roadmap.
+
+Repository workflow, coding behavior, and agent operating rules belong in `AGENTS.md`. When the two files cover the same topic, use `GAME_CONCEPT.md` for game-design intent and `AGENTS.md` for implementation process.
 
 ---
 
@@ -56,7 +58,7 @@ It should prioritize fun, readability, discovery, and atmosphere.
 
 The player flies from inside the ship.
 
-The exact cockpit implementation can initially be simple. A full complex simulated cockpit is not required for the first prototype.
+The exact cockpit implementation can initially be simple. A full complex simulated cockpit is not required for **0.1 — Flight Playground**.
 
 ---
 
@@ -1016,7 +1018,7 @@ Do not force every system into JSON if Godot Resources are simpler.
 
 ---
 
-# 23. Important Coding Principles for Codex
+# 23. Implementation Principles
 
 When implementing features:
 
@@ -1099,7 +1101,7 @@ Travel deeper into the galaxy
 
 The project is intentionally being developed through small vibe-coding iterations.
 
-Do NOT ask an AI coding agent to:
+For AI-assisted implementation, avoid broad tasks such as:
 
 > "Build Freelancer / Elite."
 
@@ -1126,6 +1128,20 @@ Good task examples:
 > Add a simple commodity market using generated price modifiers.
 
 Each task should produce something testable.
+
+---
+
+## Milestone Terminology
+
+Use these names consistently throughout the project:
+
+- **0.1 — Flight Playground**: flight foundation only
+- **0.2 — Combat**: weapons, damage, and first enemy
+- **0.3 — Docking**: station approach, docking, and launch
+- **0.4 — Supercruise**: fast in-system travel
+- **First Vertical Slice**: the combined playable result of milestones **0.1–0.4**
+
+`0.1` must not be used as shorthand for the whole first vertical slice.
 
 ---
 
@@ -1177,6 +1193,8 @@ The goal is to answer:
 ---
 
 # 28. Proposed Development Roadmap
+
+The milestone numbers below are authoritative for roadmap discussions and implementation tasks.
 
 ## 0.1 — Flight Playground
 
@@ -1290,7 +1308,7 @@ This is the first version that should feel like the intended sandbox.
 
 ---
 
-# 29. First Vertical Slice Suggested Tasks for Codex
+# 29. First Vertical Slice Suggested Implementation Tasks
 
 The following sequence is recommended across milestones 0.1–0.4. Tasks 1–3 form the Flight Playground (0.1), tasks 4–5 add Combat (0.2), tasks 6–7 add Docking (0.3), and task 8 adds Supercruise (0.4).
 
@@ -1414,7 +1432,7 @@ Use it for folders, documentation, and early project naming where convenient.
 
 ---
 
-# 32. Summary for the Agent
+# 32. Summary
 
 When uncertain, remember the central concept:
 
