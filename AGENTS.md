@@ -1850,6 +1850,20 @@ At minimum display:
 - code is clearly structured
 - important code contains useful explanatory comments
 
+## Agreed Flight Playground Defaults
+
+- Mouse-offset steering with a bounded reticle; non-inverted pitch by default.
+- W/S adjusts persistent throttle, Q/E rolls, Space requests a normal stop.
+- C centers steering, R restores the safe spawn, Esc pauses and releases the mouse.
+- Left click resumes with centered steering; losing focus pauses flight.
+- Solid local landmarks block and slide without damage; the distant planet is scenery.
+- Render the world and HUD at 854×480 with nearest-neighbor scaling and black bars.
+- Prefer integer scaling when it fits, proportional downscaling for smaller windows.
+- Default window: 1708×960. Minimal cockpit framing leaves the center clear.
+- Initial tuning: 600 m/s cap, 100 m/s² acceleration, 150 m/s² deceleration,
+  50 throttle percentage points/s, 90°/s pitch/yaw, 100°/s roll, 80° camera FOV.
+- These values are inspector-exposed playtesting defaults.
+
 ## Not Part of 0.1
 
 Do not implement:

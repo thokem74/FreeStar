@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/flight/player_ship.gd" id="1"]
+[sub_resource type="SphereShape3D" id="Hull"]
+radius = 2.0
+
+[node name="PlayerShip" type="CharacterBody3D"]
+script = ExtResource("1")
+motion_mode = 1
+[node name="Hull" type="CollisionShape3D" parent="."]
+shape = SubResource("Hull")
+[node name="Camera3D" type="Camera3D" parent="."]
+current = true
+fov = 80.0
+near = 0.2
+far = 30000.0
