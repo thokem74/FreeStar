@@ -1518,8 +1518,9 @@ Possible actions:
 
 ```text
 accelerate
-brake
+brake_reverse
 boost
+mouse_roll
 roll_left
 roll_right
 fire_primary
@@ -1855,18 +1856,24 @@ At minimum display:
 
 - No Man's Sky-inspired arcade controls: mouse-offset pitch/yaw with a bounded
   steering reticle and non-inverted pitch; A/D rolls.
-- W accelerates, Left Shift boosts, S/Space brakes. No Q/E or R/F thrust.
+- W accelerates, Left Shift boosts; S brakes through zero, then reverses while held.
+- Space does nothing. No Q/E or R/F thrust. Hold RMB to use horizontal reticle
+  offset for roll instead of yaw; pitch remains available and A/D roll combines
+  with mouse roll within the rate cap. Modifier transitions clear horizontal
+  offset and residual yaw/roll, retaining pitch.
 - Start stationary. W or Shift activates flight; release returns to cruise.
-- Braking overrides acceleration/boost. Reaching zero latches a stop until W/Shift;
-  releasing the brake early returns to cruise. Shift takes priority over W.
+- S overrides acceleration/boost. Releasing S completes a stop without cruise;
+  W/Shift can cancel stopping after S is released. Direction changes stop at zero
+  before accelerating the opposite way. Shift takes priority over W.
 - Initial speeds: 150 m/s cruise, 600 m/s normal maximum, 1,200 m/s boost maximum.
 - Acceleration: 200 m/s² normal, 400 m/s² boost. Automatic deceleration: 300 m/s²;
-  braking: 600 m/s². No reverse flight, automatic banking or boost energy system.
+  braking/direction changes: 600 m/s². Reverse maximum: 150 m/s; reverse acceleration:
+  200 m/s². No automatic banking or boost energy system.
 - Boost retains steering authority and is local flight, not milestone 0.4 Supercruise.
 - C centers steering; Home resets position, speed, rotation requests and cruise state.
 - Esc/focus loss pauses flight; left click resumes with centered steering and
   preserved stopped/cruise state.
-- HUD shows actual movement speed and STOPPED, CRUISE, ACCELERATING, BRAKING or BOOST.
+- HUD shows actual movement speed and STOPPED, CRUISE, ACCELERATING, BRAKING, BOOST or REVERSING.
 - Solid local landmarks block and slide without damage; the distant planet is scenery.
 - Render world/HUD at 854×480 with nearest-neighbor scaling and black bars.
 - Prefer integer enlargement, proportional downscaling for smaller windows.

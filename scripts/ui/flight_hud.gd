@@ -35,9 +35,9 @@ func _draw() -> void:
 	_text(Vector2(685, 411), "FLIGHT MODE", 12, MUTED)
 	_text(Vector2(685, 436), player.get_flight_mode_label(), 16, INK)
 	_text(Vector2(215, 412), "MOUSE PITCH/YAW   A/D ROLL", 12, MUTED)
-	_text(Vector2(215, 429), "W ACCELERATE   S/SPACE BRAKE", 12, MUTED)
-	_text(Vector2(215, 446), "SHIFT BOOST   C CENTER", 12, MUTED)
-	_text(Vector2(215, 463), "HOME RESET   ESC PAUSE", 12, MUTED)
+	_text(Vector2(215, 429), "W ACCELERATE   S BRAKE/REVERSE", 12, MUTED)
+	_text(Vector2(215, 446), "RMB+MOUSE ROLL   SHIFT BOOST", 12, MUTED)
+	_text(Vector2(215, 463), "C CENTER   HOME RESET   ESC PAUSE", 12, MUTED)
 	if player.flight_paused:
 		draw_rect(Rect2(0, 0, 854, 480), Color(0.015, 0.025, 0.045, 0.8))
 		_text(Vector2(345, 222), "FLIGHT PAUSED", 22, INK)

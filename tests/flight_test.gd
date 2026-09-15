@@ -21,7 +21,7 @@ func _mode(expected: PlayerShip.FlightMode) -> void:
 
 func _run() -> void:
 	var bindings: Dictionary = {
-		"accelerate": [KEY_W], "brake": [KEY_S, KEY_SPACE], "boost": [KEY_SHIFT],
+		"accelerate": [KEY_W], "brake_reverse": [KEY_S], "boost": [KEY_SHIFT],
 		"roll_left": [KEY_A], "roll_right": [KEY_D], "center_steering": [KEY_C],
 		"reset_flight": [KEY_HOME], "pause_flight": [KEY_ESCAPE],
 	}
@@ -34,6 +34,12 @@ func _run() -> void:
 			_check(InputMap.event_is_action(key, action), "Binding " + action)
 	for removed: String in ["throttle_up", "throttle_down", "stop_ship", "yaw_left", "yaw_right", "thrust_left", "thrust_right", "thrust_up", "thrust_down"]:
 		_check(not InputMap.has_action(removed), "Removed action: " + removed)
+	var space := InputEventKey.new()
+	space.physical_keycode = KEY_SPACE
+	_check(not InputMap.event_is_action(space, "brake_reverse"), "Space unbound")
+	var right_mouse := InputEventMouseButton.new()
+	right_mouse.button_index = MOUSE_BUTTON_RIGHT
+	_check(InputMap.event_is_action(right_mouse, "mouse_roll"), "RMB modifier binding")
 	var world := Node3D.new()
 	root.add_child(world)
 	player = load("res://scenes/player/PlayerShip.tscn").instantiate()
@@ -49,16 +55,16 @@ func _run() -> void:
 	await _ticks(100)
 	_mode(PlayerShip.FlightMode.CRUISE)
 	_check(absf(player.current_speed - 150.0) < 0.1, "Release W returns to cruise")
-	Input.action_press("brake")
+	Input.action_press("brake_reverse")
 	await _ticks(5)
 	_mode(PlayerShip.FlightMode.BRAKING)
-	Input.action_release("brake")
+	Input.action_release("brake_reverse")
 	await _ticks(30)
-	_mode(PlayerShip.FlightMode.CRUISE)
-	_check(absf(player.current_speed - 150.0) < 0.1, "Early brake release resumes cruise")
-	Input.action_press("brake")
+	_mode(PlayerShip.FlightMode.STOPPED)
+	_check(player.current_speed == 0.0, "Brief S tap completes stop")
+	Input.action_press("brake_reverse")
 	await _ticks(30)
-	Input.action_release("brake")
+	Input.action_release("brake_reverse")
 	await _ticks(10)
 	_mode(PlayerShip.FlightMode.STOPPED)
 	_check(player.current_speed == 0.0, "Brake latches stationary state")
@@ -80,19 +86,19 @@ func _run() -> void:
 	await _ticks(215)
 	_mode(PlayerShip.FlightMode.CRUISE)
 	_check(absf(player.current_speed - 150.0) < 0.1, "Release boost returns to cruise")
-	Input.action_press("brake")
+	Input.action_press("brake_reverse")
 	Input.action_press("accelerate")
 	Input.action_press("boost")
 	await _ticks(30)
-	_mode(PlayerShip.FlightMode.STOPPED)
-	_check(player.current_speed == 0.0, "Brake overrides acceleration and boost")
+	_mode(PlayerShip.FlightMode.REVERSING)
+	_check(player._forward_speed < 0.0, "S overrides W and Shift, then reverses")
 	Input.action_release("accelerate")
 	Input.action_release("boost")
-	Input.action_release("brake")
+	Input.action_release("brake_reverse")
 	Input.action_press("accelerate")
-	await _ticks(10)
+	await _ticks(30)
 	Input.action_release("accelerate")
-	_check(player.current_speed > 0.0, "W restarts stopped flight")
+	_check(player._forward_speed > 0.0, "W restarts stopped flight")
 	player.pause_flight()
 	var paused_transform: Transform3D = player.global_transform
 	await _ticks(10)
@@ -138,6 +144,45 @@ func _run() -> void:
 	await _ticks(60)
 	_check(player._angular_rate.length() < 0.001, "Rotation settles after centering")
 
+	# Modifier changes must not reinterpret existing yaw as roll (or vice versa).
+	player.reset_flight()
+	player.steering_offset = Vector2(100, -40)
+	Input.action_press("mouse_roll")
+	await _ticks(1)
+	_check(player.mouse_roll_active and player.steering_offset.x == 0.0 and player.steering_offset.y == -40.0, "RMB clears horizontal only")
+	player.steering_offset = Vector2(160, 0)
+	Input.action_press("roll_right")
+	await _ticks(20)
+	_check(player.basis.x.y < 0.0 and absf(player._angular_rate.z) <= deg_to_rad(player.roll_rate_degrees), "Mouse roll combines with A/D within cap")
+	Input.action_release("roll_right")
+	player.pause_flight()
+	Input.action_release("mouse_roll")
+	player.resume_flight()
+	_check(not player.mouse_roll_active and player.steering_offset == Vector2.ZERO and player._angular_rate == Vector3.ZERO, "Release during pause clears modifier")
+	player.reset_flight()
+	Input.action_press("brake_reverse")
+	await _ticks(60)
+	_mode(PlayerShip.FlightMode.REVERSING)
+	_check(absf(player._forward_speed + 150.0) < 0.1 and player.position.z > 0.0, "Reverse speed and direction")
+	Input.action_release("brake_reverse")
+	await _ticks(20)
+	_mode(PlayerShip.FlightMode.STOPPED)
+	_check(player.current_speed == 0.0, "Reverse release stops without cruise")
+	# Test explicit zero crossing from boost and back into forward flight.
+	player._forward_speed = 1200.0
+	Input.action_press("brake_reverse")
+	var reached_zero: bool = false
+	for tick in 150:
+		await _ticks(1)
+		if player._forward_speed == 0.0:
+			reached_zero = true
+	_check(reached_zero and player._forward_speed < 0.0, "Boost to reverse passes through exact zero")
+	Input.action_release("brake_reverse")
+	Input.action_press("boost")
+	await _ticks(60)
+	_check(player._forward_speed > 0.0, "Shift cancels reverse stopping and drives forward")
+	Input.action_release("boost")
+
 	var wall := StaticBody3D.new()
 	wall.position.z = -500.0
 	var collision := CollisionShape3D.new()
@@ -160,6 +205,19 @@ func _run() -> void:
 				_check(player.current_speed < 1.0 and player._forward_speed < 1.0, "Blocked speed and stored movement remain zero")
 			else:
 				_check(player.position.x > 500.0, "Angled contact slides")
+	wall.position.z = 100.0
+	await _ticks(2)
+	for angle: float in [0.0, PI / 4.0]:
+		player.reset_flight()
+		player.rotate_y(angle)
+		Input.action_press("brake_reverse")
+		await _ticks(130)
+		Input.action_release("brake_reverse")
+		_check(player.position.z < 97.2, "Reverse collision blocks")
+		if angle == 0.0:
+			_check(player.current_speed < 1.0 and absf(player._forward_speed) < 1.0, "Reverse contact stores no blocked speed")
+		else:
+			_check(player.position.x > 100.0, "Reverse angled contact slides")
 	wall.queue_free()
 	await _ticks(2)
 	var reference_position := Vector3.ZERO
