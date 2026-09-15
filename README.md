@@ -16,16 +16,25 @@ The ship starts stationary facing a handcrafted test range. Orange and teal pylo
 
 | Input | Action |
 |---|---|
-| Mouse | Offset steering reticle; farther from center turns faster |
-| W / S | Raise / lower persistent throttle |
-| Q / E | Roll left / right |
-| Space | Set throttle to zero and decelerate |
+| Mouse | Offset reticle requests smooth pitch/yaw |
+| A / D | Roll left / right |
+| W | Accelerate toward 600 m/s |
+| S or Space | Brake to a stop |
+| Left Shift | Boost toward 1,200 m/s while held |
 | C | Center steering |
-| R | Reset ship and controls to the safe spawn |
+| Home | Reset to stationary spawn |
 | Esc | Pause and release mouse |
 | Left click while paused | Resume with centered steering |
 
-Losing focus pauses flight. Throttle remains set during collisions; speed displays actual movement. The world and HUD render at 854×480 with nearest-neighbor scaling and black bars. Integer enlargement is used when it fits; smaller windows scale proportionally.
+Start stationary; W or Shift starts flight. Releasing acceleration returns smoothly to 150 m/s cruise. Braking overrides W and Shift. Once braking reaches zero, the ship stays stopped until W or Shift is pressed. Releasing the brake before stopping returns to cruise.
+
+Shift takes priority over W. Releasing Shift while holding W returns toward normal maximum speed; releasing both returns to cruise. Boost has no energy limit and is local arcade acceleration, not supercruise. Q/E and R/F have no flight bindings.
+
+Losing focus pauses flight. Resuming preserves cruise/stopped state and centers steering. The HUD shows actual movement speed and STOPPED, CRUISE, ACCELERATING, BRAKING, or BOOST. Collisions block or slide without damage and do not store forward acceleration against obstacles.
+
+The world and HUD render at 854×480 with nearest-neighbor scaling and black bars. Integer enlargement is used when it fits; smaller windows scale proportionally.
+
+Initial tuning is 200 m/s² normal acceleration, 400 m/s² boost acceleration, 300 m/s² automatic deceleration, and 600 m/s² braking.
 
 Tune flight and steering in `PlayerShip`'s inspector; camera FOV is on its Camera3D. The HUD reads telemetry, and the root presentation routes window input into the internal viewport.
 

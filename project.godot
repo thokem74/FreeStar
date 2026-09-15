@@ -32,25 +32,25 @@ rendering_device/driver.windows="d3d12"
 
 [input]
 
-throttle_up={
+accelerate={
 "deadzone": 0.2,
 "events": [Object(InputEventKey,"physical_keycode":87)]
 }
-throttle_down={
+brake={
 "deadzone": 0.2,
-"events": [Object(InputEventKey,"physical_keycode":83)]
+"events": [Object(InputEventKey,"physical_keycode":83), Object(InputEventKey,"physical_keycode":32)]
+}
+boost={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"physical_keycode":4194325,"location":1)]
 }
 roll_left={
 "deadzone": 0.2,
-"events": [Object(InputEventKey,"physical_keycode":81)]
+"events": [Object(InputEventKey,"physical_keycode":65)]
 }
 roll_right={
 "deadzone": 0.2,
-"events": [Object(InputEventKey,"physical_keycode":69)]
-}
-stop_ship={
-"deadzone": 0.2,
-"events": [Object(InputEventKey,"physical_keycode":32)]
+"events": [Object(InputEventKey,"physical_keycode":68)]
 }
 center_steering={
 "deadzone": 0.2,
@@ -58,7 +58,7 @@ center_steering={
 }
 reset_flight={
 "deadzone": 0.2,
-"events": [Object(InputEventKey,"physical_keycode":82)]
+"events": [Object(InputEventKey,"physical_keycode":4194317)]
 }
 pause_flight={
 "deadzone": 0.2,
