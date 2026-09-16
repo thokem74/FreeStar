@@ -30,6 +30,8 @@ var mouse_roll_active: bool = false
 var steering_offset: Vector2 = Vector2.ZERO
 var flight_paused: bool = false
 var current_speed: float = 0.0
+var external_control: bool = false
+var approach_speed_limit: float = 0.0
 # Signed longitudinal speed: positive forward, negative reverse.
 var _forward_speed: float = 0.0
 # Local pitch, yaw and roll rates, in radians per second.
@@ -49,6 +51,8 @@ func handle_input(event: InputEvent, display_scale: float) -> void:
 	if flight_paused:
 		if event.is_action_pressed("resume_flight"):
 			resume_flight()
+		return
+	if external_control:
 		return
 	_sync_mouse_roll()
 	if event.is_action_pressed("brake_reverse"):
@@ -72,8 +76,20 @@ func resume_flight() -> void:
 	_sync_mouse_roll()
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
+func set_external_control(enabled: bool) -> void:
+	external_control = enabled
+	clear_motion()
+
+func set_approach_speed_limit(limit: float) -> void:
+	approach_speed_limit = maxf(limit, 0.0)
+
 func reset_flight() -> void:
 	global_transform = _spawn_transform
+	clear_motion()
+
+# Control handoffs deliberately clear cruise and angular requests without
+# changing position or pause state. Docking owns placement and UI transitions.
+func clear_motion() -> void:
 	_cruise_active = false
 	_stopping = false
 	mouse_roll_active = Input.is_action_pressed("mouse_roll")
@@ -85,7 +101,7 @@ func reset_flight() -> void:
 	_angular_rate = Vector3.ZERO
 
 func _physics_process(delta: float) -> void:
-	if flight_paused:
+	if flight_paused or external_control:
 		return
 	_sync_mouse_roll()
 	_update_rotation(delta)
@@ -111,7 +127,7 @@ func _physics_process(delta: float) -> void:
 
 func _update_speed(delta: float) -> void:
 	var reversing: bool = Input.is_action_pressed("brake_reverse")
-	var boosting: bool = Input.is_action_pressed("boost")
+	var boosting: bool = Input.is_action_pressed("boost") and approach_speed_limit == 0.0
 	var accelerating: bool = Input.is_action_pressed("accelerate")
 	var requested_speed: float = 0.0
 	var speeding_up: float = acceleration
@@ -134,13 +150,15 @@ func _update_speed(delta: float) -> void:
 		flight_mode = FlightMode.CRUISE
 	else:
 		flight_mode = FlightMode.STOPPED
+	if approach_speed_limit > 0.0:
+		requested_speed = clampf(requested_speed, -approach_speed_limit, approach_speed_limit)
 	# Direction changes consume a braking tick that can reach, but never cross,
 	# zero. Acceleration into the opposite direction starts on the next tick.
 	if requested_speed * _forward_speed < 0.0:
 		_forward_speed = move_toward(_forward_speed, 0.0, brake_deceleration * delta)
 		flight_mode = FlightMode.BRAKING
 	else:
-		var slowing_down: float = brake_deceleration if _stopping else deceleration
+		var slowing_down: float = brake_deceleration if _stopping or approach_speed_limit > 0.0 else deceleration
 		var change_rate: float = speeding_up if absf(requested_speed) > absf(_forward_speed) else slowing_down
 		_forward_speed = move_toward(_forward_speed, requested_speed, change_rate * delta)
 	if requested_speed == 0.0 and is_zero_approx(_forward_speed):

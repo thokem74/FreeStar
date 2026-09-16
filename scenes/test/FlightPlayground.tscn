@@ -1,9 +1,15 @@
-[gd_scene load_steps=12 format=3]
+[gd_scene load_steps=18 format=3]
 [ext_resource type="Script" path="res://scripts/ui/presentation.gd" id="1"]
 [ext_resource type="Shader" path="res://assets/shaders/flat_planet.gdshader" id="4"]
 [ext_resource type="PackedScene" path="res://scenes/player/PlayerShip.tscn" id="2"]
 [ext_resource type="PackedScene" path="res://scenes/ui/FlightHUD.tscn" id="3"]
 [ext_resource type="PackedScene" path="res://scenes/test/BlockBelt.tscn" id="5"]
+[ext_resource type="Script" path="res://scripts/docking/docking_coordinator.gd" id="Docking"]
+[ext_resource type="PackedScene" path="res://scenes/ui/DockingHUD.tscn" id="DockUI"]
+[ext_resource type="PackedScene" path="res://scenes/stations/NorthRing.tscn" id="NorthRing"]
+[ext_resource type="PackedScene" path="res://scenes/stations/SouthOutpost.tscn" id="SouthOutpost"]
+[ext_resource type="PackedScene" path="res://scenes/stations/EastCargo.tscn" id="EastCargo"]
+[ext_resource type="PackedScene" path="res://scenes/stations/WestPlatform.tscn" id="WestPlatform"]
 [sub_resource type="Environment" id="Space"]
 background_mode = 1
 background_color = Color(0.025, 0.037, 0.065, 1)
@@ -63,9 +69,30 @@ cast_shadow = 0
 position = Vector3(-6500, 3200, -15000)
 mesh = SubResource("PlanetMesh")
 [node name="BlockBelt" parent="GameViewport/World" instance=ExtResource("5")]
+[node name="Stations" type="Node3D" parent="GameViewport/World"]
+[node name="NorthRing" parent="GameViewport/World/Stations" instance=ExtResource("NorthRing")]
+position = Vector3(0, 0, -9000)
+rotation_degrees = Vector3(0, 0, 0)
+[node name="SouthOutpost" parent="GameViewport/World/Stations" instance=ExtResource("SouthOutpost")]
+position = Vector3(0, 0, 2500)
+rotation_degrees = Vector3(0, 180, 0)
+[node name="EastCargo" parent="GameViewport/World/Stations" instance=ExtResource("EastCargo")]
+position = Vector3(4200, 0, -3250)
+rotation_degrees = Vector3(0, -90, 0)
+[node name="WestPlatform" parent="GameViewport/World/Stations" instance=ExtResource("WestPlatform")]
+position = Vector3(-4200, 0, -3250)
+rotation_degrees = Vector3(0, 90, 0)
+[node name="Docking" type="Node" parent="GameViewport/World" node_paths=PackedStringArray("player", "station_root", "hull")]
+script = ExtResource("Docking")
+player = NodePath("../PlayerShip")
+station_root = NodePath("../Stations")
+hull = NodePath("../PlayerShip/Hull")
 [node name="HUDLayer" type="CanvasLayer" parent="GameViewport"]
 [node name="FlightHUD" parent="GameViewport/HUDLayer" node_paths=PackedStringArray("player") instance=ExtResource("3")]
 player = NodePath("../../World/PlayerShip")
+[node name="DockingHUD" parent="GameViewport/HUDLayer" node_paths=PackedStringArray("coordinator", "camera") instance=ExtResource("DockUI")]
+coordinator = NodePath("../../World/Docking")
+camera = NodePath("../../World/PlayerShip/Camera3D")
 [node name="Screen" type="TextureRect" parent="."]
 texture_filter = 1
 mouse_filter = 2

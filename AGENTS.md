@@ -85,6 +85,9 @@ Do not invent alternate milestone names, prototype numbering schemes, phases, sl
 
 Milestones must be implemented in this general order unless the user explicitly changes the plan.
 
+User-approved exception: implement 0.3 Docking after the current 0.1 Flight Playground,
+before 0.2 Combat. Combat remains unimplemented and is not included in docking.
+
 When discussing scope, use the names and numbers above.
 
 The project principle is:
@@ -1945,6 +1948,25 @@ Do not add:
 ---
 
 # 58. Milestone 0.3 — Docking
+
+## Agreed Docking Implementation
+
+- Four authored stations surround the block belt: north (-Z) ring at (0,0,-9000),
+  south (+Z) outpost at (0,0,2500), east cargo at (4200,0,-3250), and west
+  open-top platform at (-4200,0,-3250). Entrances face toward the belt.
+- F requests/cancels nearest-station clearance within 2,000 m; clearance is
+  exclusive and revoked beyond 2,200 m. Entry through the marked aperture is required.
+- A 1,600 m approach zone limits forward/reverse targets to 100 m/s and disables
+  boost while retaining manual steering. Excess speed decelerates normally at braking rate.
+- Deep capture requires inward alignment within 30° and actual speed <=100 m/s.
+  Autodock checks the collision path and settles over about two seconds, facing outward.
+- Docked overlay provides station identity and Launch only. Launch starts stationary
+  inside the berth for a manual exit. Assistance persists until outside the approach.
+- Launch cannot immediately recapture; a new clearance is required after exit.
+- Pause/focus loss freezes flight and autodock. Docked UI never resumes flight on
+  an ordinary click. Home clears all docking state and resets the ship.
+- Shared station components supply geometry references; a scene-local coordinator
+  owns clearance/control handoffs. No autoload, station services, traffic, or economy.
 
 ## Goal
 

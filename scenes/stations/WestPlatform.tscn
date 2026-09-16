@@ -1,0 +1,262 @@
+[gd_scene load_steps=42 format=3]
+[ext_resource type="Script" path="res://scripts/docking/docking_station.gd" id="1"]
+[sub_resource type="StandardMaterial3D" id="Hull"]
+albedo_color = Color(0.2, 0.26, 0.34, 1)
+roughness = 1.0
+[sub_resource type="StandardMaterial3D" id="Accent"]
+albedo_color = Color(0.6, 0.45, 0.9, 1)
+roughness = 1.0
+[sub_resource type="StandardMaterial3D" id="Guide"]
+albedo_color = Color(0.35, 1, 0.75, 1)
+roughness = 1.0
+shading_mode = 0
+[sub_resource type="BoxShape3D" id="Approach"]
+size = Vector3(600, 600, 1940)
+[sub_resource type="BoxShape3D" id="Interior"]
+size = Vector3(220, 100, 240)
+[sub_resource type="BoxShape3D" id="Capture"]
+size = Vector3(200, 80, 50)
+[sub_resource type="BoxMesh" id="Mesh0"]
+size = Vector3(260, 20, 240)
+material = SubResource("Hull")
+[sub_resource type="BoxShape3D" id="Solid0"]
+size = Vector3(260, 20, 240)
+[sub_resource type="BoxMesh" id="Mesh1"]
+size = Vector3(20, 100, 240)
+material = SubResource("Hull")
+[sub_resource type="BoxShape3D" id="Solid1"]
+size = Vector3(20, 100, 240)
+[sub_resource type="BoxMesh" id="Mesh2"]
+size = Vector3(20, 100, 240)
+material = SubResource("Hull")
+[sub_resource type="BoxShape3D" id="Solid2"]
+size = Vector3(20, 100, 240)
+[sub_resource type="BoxMesh" id="Mesh3"]
+size = Vector3(260, 140, 20)
+material = SubResource("Accent")
+[sub_resource type="BoxShape3D" id="Solid3"]
+size = Vector3(260, 140, 20)
+[sub_resource type="BoxMesh" id="Mesh4"]
+size = Vector3(8, 100, 8)
+material = SubResource("Guide")
+[sub_resource type="BoxShape3D" id="Solid4"]
+size = Vector3(8, 100, 8)
+[sub_resource type="BoxMesh" id="Mesh5"]
+size = Vector3(8, 100, 8)
+material = SubResource("Guide")
+[sub_resource type="BoxShape3D" id="Solid5"]
+size = Vector3(8, 100, 8)
+[sub_resource type="BoxMesh" id="Mesh6"]
+size = Vector3(6, 4, 12)
+material = SubResource("Guide")
+[sub_resource type="BoxShape3D" id="Solid6"]
+size = Vector3(6, 4, 12)
+[sub_resource type="BoxMesh" id="Mesh7"]
+size = Vector3(6, 4, 12)
+material = SubResource("Guide")
+[sub_resource type="BoxShape3D" id="Solid7"]
+size = Vector3(6, 4, 12)
+[sub_resource type="BoxMesh" id="Mesh8"]
+size = Vector3(6, 4, 12)
+material = SubResource("Guide")
+[sub_resource type="BoxShape3D" id="Solid8"]
+size = Vector3(6, 4, 12)
+[sub_resource type="BoxMesh" id="Mesh9"]
+size = Vector3(6, 4, 12)
+material = SubResource("Guide")
+[sub_resource type="BoxShape3D" id="Solid9"]
+size = Vector3(6, 4, 12)
+[sub_resource type="BoxMesh" id="Mesh10"]
+size = Vector3(6, 4, 12)
+material = SubResource("Guide")
+[sub_resource type="BoxShape3D" id="Solid10"]
+size = Vector3(6, 4, 12)
+[sub_resource type="BoxMesh" id="Mesh11"]
+size = Vector3(6, 4, 12)
+material = SubResource("Guide")
+[sub_resource type="BoxShape3D" id="Solid11"]
+size = Vector3(6, 4, 12)
+[sub_resource type="BoxMesh" id="Mesh12"]
+size = Vector3(6, 4, 12)
+material = SubResource("Guide")
+[sub_resource type="BoxShape3D" id="Solid12"]
+size = Vector3(6, 4, 12)
+[sub_resource type="BoxMesh" id="Mesh13"]
+size = Vector3(6, 4, 12)
+material = SubResource("Guide")
+[sub_resource type="BoxShape3D" id="Solid13"]
+size = Vector3(6, 4, 12)
+[sub_resource type="BoxMesh" id="Mesh14"]
+size = Vector3(440, 40, 420)
+material = SubResource("Accent")
+[sub_resource type="BoxShape3D" id="Solid14"]
+size = Vector3(440, 40, 420)
+[sub_resource type="BoxMesh" id="Mesh15"]
+size = Vector3(70, 270, 70)
+material = SubResource("Hull")
+[sub_resource type="BoxShape3D" id="Solid15"]
+size = Vector3(70, 270, 70)
+[sub_resource type="BoxMesh" id="Mesh16"]
+size = Vector3(45, 20, 45)
+material = SubResource("Guide")
+[sub_resource type="BoxShape3D" id="Solid16"]
+size = Vector3(45, 20, 45)
+
+[node name="WestPlatform" type="Node3D" node_paths=PackedStringArray("entrance", "berth", "approach_volume", "interior_volume", "capture_volume")]
+script = ExtResource("1")
+display_name = "WEST — SERVICE PLATFORM"
+marker_name = "W PLATFORM"
+marker_color = Color(0.6, 0.45, 0.9, 1)
+entrance = NodePath("Entrance")
+berth = NodePath("Berth")
+approach_volume = NodePath("Approach/Shape")
+interior_volume = NodePath("Interior/Shape")
+capture_volume = NodePath("Capture/Shape")
+entrance_half_size = Vector2(110.0, 50.0)
+[node name="Entrance" type="Marker3D" parent="."]
+[node name="Berth" type="Marker3D" parent="."]
+position = Vector3(0, 0, -200)
+rotation_degrees = Vector3(0, 180, 0)
+[node name="Approach" type="Area3D" parent="."]
+position = Vector3(0, 0, 630.0)
+collision_layer = 0
+collision_mask = 0
+monitoring = false
+monitorable = false
+[node name="Shape" type="CollisionShape3D" parent="Approach"]
+shape = SubResource("Approach")
+[node name="Interior" type="Area3D" parent="."]
+position = Vector3(0, 0, -120.0)
+collision_layer = 0
+collision_mask = 0
+monitoring = false
+monitorable = false
+[node name="Shape" type="CollisionShape3D" parent="Interior"]
+shape = SubResource("Interior")
+[node name="Capture" type="Area3D" parent="."]
+position = Vector3(0, 0, -140)
+collision_layer = 0
+collision_mask = 0
+monitoring = false
+monitorable = false
+[node name="Shape" type="CollisionShape3D" parent="Capture"]
+shape = SubResource("Capture")
+[node name="Floor" type="StaticBody3D" parent="."]
+position = Vector3(0, -60.0, -120.0)
+rotation_degrees = Vector3(0, 0, 0)
+[node name="Mesh" type="MeshInstance3D" parent="Floor"]
+mesh = SubResource("Mesh0")
+[node name="Shape" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("Solid0")
+[node name="Left" type="StaticBody3D" parent="."]
+position = Vector3(-120.0, 0, -120.0)
+rotation_degrees = Vector3(0, 0, 0)
+[node name="Mesh" type="MeshInstance3D" parent="Left"]
+mesh = SubResource("Mesh1")
+[node name="Shape" type="CollisionShape3D" parent="Left"]
+shape = SubResource("Solid1")
+[node name="Right" type="StaticBody3D" parent="."]
+position = Vector3(120.0, 0, -120.0)
+rotation_degrees = Vector3(0, 0, 0)
+[node name="Mesh" type="MeshInstance3D" parent="Right"]
+mesh = SubResource("Mesh2")
+[node name="Shape" type="CollisionShape3D" parent="Right"]
+shape = SubResource("Solid2")
+[node name="Back" type="StaticBody3D" parent="."]
+position = Vector3(0, 0, -250)
+rotation_degrees = Vector3(0, 0, 0)
+[node name="Mesh" type="MeshInstance3D" parent="Back"]
+mesh = SubResource("Mesh3")
+[node name="Shape" type="CollisionShape3D" parent="Back"]
+shape = SubResource("Solid3")
+[node name="EntranceEdge4" type="StaticBody3D" parent="."]
+position = Vector3(-115.0, 0, 4)
+rotation_degrees = Vector3(0, 0, 0)
+[node name="Mesh" type="MeshInstance3D" parent="EntranceEdge4"]
+mesh = SubResource("Mesh4")
+[node name="Shape" type="CollisionShape3D" parent="EntranceEdge4"]
+shape = SubResource("Solid4")
+[node name="EntranceEdge5" type="StaticBody3D" parent="."]
+position = Vector3(115.0, 0, 4)
+rotation_degrees = Vector3(0, 0, 0)
+[node name="Mesh" type="MeshInstance3D" parent="EntranceEdge5"]
+mesh = SubResource("Mesh5")
+[node name="Shape" type="CollisionShape3D" parent="EntranceEdge5"]
+shape = SubResource("Solid5")
+[node name="Guide6" type="StaticBody3D" parent="."]
+position = Vector3(-105.0, -48.0, 0)
+rotation_degrees = Vector3(0, 0, 0)
+[node name="Mesh" type="MeshInstance3D" parent="Guide6"]
+mesh = SubResource("Mesh6")
+[node name="Shape" type="CollisionShape3D" parent="Guide6"]
+shape = SubResource("Solid6")
+[node name="Guide7" type="StaticBody3D" parent="."]
+position = Vector3(105.0, -48.0, 0)
+rotation_degrees = Vector3(0, 0, 0)
+[node name="Mesh" type="MeshInstance3D" parent="Guide7"]
+mesh = SubResource("Mesh7")
+[node name="Shape" type="CollisionShape3D" parent="Guide7"]
+shape = SubResource("Solid7")
+[node name="Guide8" type="StaticBody3D" parent="."]
+position = Vector3(-105.0, -48.0, -60)
+rotation_degrees = Vector3(0, 0, 0)
+[node name="Mesh" type="MeshInstance3D" parent="Guide8"]
+mesh = SubResource("Mesh8")
+[node name="Shape" type="CollisionShape3D" parent="Guide8"]
+shape = SubResource("Solid8")
+[node name="Guide9" type="StaticBody3D" parent="."]
+position = Vector3(105.0, -48.0, -60)
+rotation_degrees = Vector3(0, 0, 0)
+[node name="Mesh" type="MeshInstance3D" parent="Guide9"]
+mesh = SubResource("Mesh9")
+[node name="Shape" type="CollisionShape3D" parent="Guide9"]
+shape = SubResource("Solid9")
+[node name="Guide10" type="StaticBody3D" parent="."]
+position = Vector3(-105.0, -48.0, -120)
+rotation_degrees = Vector3(0, 0, 0)
+[node name="Mesh" type="MeshInstance3D" parent="Guide10"]
+mesh = SubResource("Mesh10")
+[node name="Shape" type="CollisionShape3D" parent="Guide10"]
+shape = SubResource("Solid10")
+[node name="Guide11" type="StaticBody3D" parent="."]
+position = Vector3(105.0, -48.0, -120)
+rotation_degrees = Vector3(0, 0, 0)
+[node name="Mesh" type="MeshInstance3D" parent="Guide11"]
+mesh = SubResource("Mesh11")
+[node name="Shape" type="CollisionShape3D" parent="Guide11"]
+shape = SubResource("Solid11")
+[node name="Guide12" type="StaticBody3D" parent="."]
+position = Vector3(-105.0, -48.0, -180)
+rotation_degrees = Vector3(0, 0, 0)
+[node name="Mesh" type="MeshInstance3D" parent="Guide12"]
+mesh = SubResource("Mesh12")
+[node name="Shape" type="CollisionShape3D" parent="Guide12"]
+shape = SubResource("Solid12")
+[node name="Guide13" type="StaticBody3D" parent="."]
+position = Vector3(105.0, -48.0, -180)
+rotation_degrees = Vector3(0, 0, 0)
+[node name="Mesh" type="MeshInstance3D" parent="Guide13"]
+mesh = SubResource("Mesh13")
+[node name="Shape" type="CollisionShape3D" parent="Guide13"]
+shape = SubResource("Solid13")
+[node name="Platform" type="StaticBody3D" parent="."]
+position = Vector3(0, -85.0, -120.0)
+rotation_degrees = Vector3(0, 0, 0)
+[node name="Mesh" type="MeshInstance3D" parent="Platform"]
+mesh = SubResource("Mesh14")
+[node name="Shape" type="CollisionShape3D" parent="Platform"]
+shape = SubResource("Solid14")
+[node name="Tower" type="StaticBody3D" parent="."]
+position = Vector3(-180.0, 100, -190)
+rotation_degrees = Vector3(0, 0, 0)
+[node name="Mesh" type="MeshInstance3D" parent="Tower"]
+mesh = SubResource("Mesh15")
+[node name="Shape" type="CollisionShape3D" parent="Tower"]
+shape = SubResource("Solid15")
+[node name="Beacon" type="StaticBody3D" parent="."]
+position = Vector3(-180.0, 245, -190)
+rotation_degrees = Vector3(0, 0, 0)
+[node name="Mesh" type="MeshInstance3D" parent="Beacon"]
+mesh = SubResource("Mesh16")
+[node name="Shape" type="CollisionShape3D" parent="Beacon"]
+shape = SubResource("Solid16")

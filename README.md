@@ -1,6 +1,6 @@
 # FreeStar
 
-First-person retro arcade space sandbox. Current milestone: **0.1 — Flight Playground**.
+First-person retro arcade space sandbox. Current milestone: **0.3 — Docking**, implemented before 0.2 Combat by request.
 
 ## Run
 
@@ -23,7 +23,8 @@ The ship starts stationary facing a handcrafted test range. A belt of 220 colorf
 | S | Brake, stop, then reverse while held |
 | Left Shift | Boost toward 1,200 m/s while held |
 | C | Center steering |
-| Home | Reset to stationary spawn |
+| F | Request/cancel docking clearance at the nearest entrance within 2,000 m |
+| Home | Reset to stationary spawn and clear all docking state |
 | Esc | Pause and release mouse |
 | Left click while paused | Resume with centered steering |
 
@@ -56,3 +57,31 @@ For hands-on testing, fly between the belt blocks, approach structures head-on a
 Project design and milestone scope live in [AGENTS.md](AGENTS.md).
 
 The block belt is a fixed, editor-editable scene with shared meshes/materials and matching solid box colliders. Its varied spacing leaves a clear initial approach. It does not generate or animate obstacles at runtime.
+
+## Docking
+
+Four stations surround the block belt on the horizontal X/Z plane. HUD markers show their direction and distance:
+
+| Station | Position (m) | Entrance layout |
+|---|---|---|
+| North — Ring Station | (0, 0, -9000) | Axial ring tunnel |
+| South — Outpost | (0, 0, 2500) | Wide open-front hangar |
+| East — Cargo Terminal | (4200, 0, -3250) | Long cargo corridor |
+| West — Service Platform | (-4200, 0, -3250) | Horizontal entry into an open-top bay |
+
+Press **F** within 2,000 m of an entrance for clearance. Fly through the highlighted entrance and follow the green guide lights. In the cleared approach zone, forward/reverse speed targets are capped at **100 m/s** and boost is disabled; excess speed decelerates smoothly. Only the cleared station can capture you, deep inside its bay, aligned inward within 30° and moving at no more than 100 m/s.
+
+Autodock takes about two seconds and settles the ship facing the exit. The docked overlay shows the station name and **Launch**. Click Launch to regain control, stationary inside the bay; press W and fly out manually. Assistance ends outside the approach zone. New docking requires leaving and requesting clearance again.
+
+F again cancels clearance; requesting another eligible station transfers it. Clearance expires beyond 2,200 m. Entering through a wall or the service platform roof cannot dock you. Requesting from inside requires exiting and re-entering. Esc/focus loss pauses flight and autodocking. Home resets flight and docking from any state. Stations provide no services yet.
+
+Station geometry is authored in `scenes/stations/`; each scene exposes its own entrance, volumes, berth, and tuning. Docking state belongs to the scene-local coordinator, and ordinary flight remains in the ship controller.
+
+Additional checks:
+
+```sh
+godot --headless --path . --script tests/docking_test.gd
+godot --path . --script tests/docking_presentation_test.gd
+```
+
+The rendered docking check saves station approaches and docked overlays under `/tmp/freestar-*.png` and exercises Launch-button routing at three viewport sizes.
