@@ -17,7 +17,7 @@ func _draw() -> void:
 	if not is_instance_valid(player):
 		return
 	var center: Vector2 = size * 0.5
-	# HUD and world share internal pixels, keeping the steering marker aligned.
+	# HUD and world share internal pixels, keeping the pitch/yaw steering indicator aligned.
 	var aim: Vector2 = center + player.steering_offset
 	draw_line(center - Vector2(5, 0), center + Vector2(5, 0), MUTED)
 	draw_line(center - Vector2(0, 5), center + Vector2(0, 5), MUTED)
@@ -32,11 +32,12 @@ func _draw() -> void:
 	_text(Vector2(22, 30), "FREESTAR / FLIGHT PLAYGROUND", 18, INK)
 	_text(Vector2(22, 50), "0.1    LOCAL TEST RANGE", 12, MUTED)
 	_text(Vector2(24, 432), "%03d m/s" % roundi(player.current_speed), 22, INK)
-	_text(Vector2(692, 428), "THR %03d%%" % roundi(player.throttle * 100.0), 17, INK)
-	draw_rect(Rect2(692, 440, 138, 8), MUTED, false)
-	draw_rect(Rect2(694, 442, 134 * player.throttle, 4), INK)
-	_text(Vector2(225, 442), "W/S THROTTLE   Q/E ROLL   SPACE STOP", 12, MUTED)
-	_text(Vector2(225, 462), "C CENTER   R RESET   ESC PAUSE", 12, MUTED)
+	_text(Vector2(685, 411), "FLIGHT MODE", 12, MUTED)
+	_text(Vector2(685, 436), player.get_flight_mode_label(), 16, INK)
+	_text(Vector2(215, 412), "MOUSE PITCH/YAW   A/D ROLL", 12, MUTED)
+	_text(Vector2(215, 429), "W ACCELERATE   S BRAKE/REVERSE", 12, MUTED)
+	_text(Vector2(215, 446), "RMB+MOUSE ROLL   SHIFT BOOST", 12, MUTED)
+	_text(Vector2(215, 463), "C CENTER   HOME RESET   ESC PAUSE", 12, MUTED)
 	if player.flight_paused:
 		draw_rect(Rect2(0, 0, 854, 480), Color(0.015, 0.025, 0.045, 0.8))
 		_text(Vector2(345, 222), "FLIGHT PAUSED", 22, INK)

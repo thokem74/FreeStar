@@ -29,6 +29,9 @@ func _run() -> void:
 	await RenderingServer.frame_post_draw
 	outer.get_texture().get_image().save_png("/tmp/freestar-default.png")
 	_check(scene.display_scale == 2.0, "2x scale at default size")
+	# Exercise the longest mode label and four-digit boost speed at native scale.
+	ship.flight_mode = PlayerShip.FlightMode.ACCELERATING
+	ship.current_speed = 1200.0
 	outer.size = Vector2i(1100, 700)
 	for frame in 8:
 		await process_frame

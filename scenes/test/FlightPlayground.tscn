@@ -1,26 +1,18 @@
-[gd_scene load_steps=36 format=3]
+[gd_scene load_steps=12 format=3]
 [ext_resource type="Script" path="res://scripts/ui/presentation.gd" id="1"]
 [ext_resource type="Shader" path="res://assets/shaders/flat_planet.gdshader" id="4"]
 [ext_resource type="PackedScene" path="res://scenes/player/PlayerShip.tscn" id="2"]
 [ext_resource type="PackedScene" path="res://scenes/ui/FlightHUD.tscn" id="3"]
+[ext_resource type="PackedScene" path="res://scenes/test/BlockBelt.tscn" id="5"]
 [sub_resource type="Environment" id="Space"]
 background_mode = 1
-background_color = Color(0.008, 0.014, 0.03, 1)
-ambient_light_source = 3
-ambient_light_color = Color(0.42, 0.56, 0.75, 1)
-ambient_light_energy = 0.65
+background_color = Color(0.025, 0.037, 0.065, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.65, 0.73, 0.88, 1)
+ambient_light_energy = 0.85
 tonemap_mode = 0
 [sub_resource type="ViewportTexture" id="View"]
 viewport_path = NodePath("GameViewport")
-[sub_resource type="StandardMaterial3D" id="Steel"]
-albedo_color = Color(0.22, 0.34, 0.43, 1)
-roughness = 1.0
-[sub_resource type="StandardMaterial3D" id="Orange"]
-albedo_color = Color(0.85, 0.32, 0.10, 1)
-roughness = 1.0
-[sub_resource type="StandardMaterial3D" id="Teal"]
-albedo_color = Color(0.12, 0.60, 0.59, 1)
-roughness = 1.0
 [sub_resource type="ShaderMaterial" id="Planet"]
 shader = ExtResource("4")
 [sub_resource type="SphereMesh" id="PlanetMesh"]
@@ -29,66 +21,15 @@ radius = 2600.0
 height = 5200.0
 radial_segments = 16
 rings = 8
-[sub_resource type="BoxMesh" id="Mesh0"]
-material = SubResource("Steel")
-size = Vector3(160, 220, 180)
-[sub_resource type="BoxShape3D" id="Shape0"]
-size = Vector3(160, 220, 180)
-[sub_resource type="BoxMesh" id="Mesh1"]
-material = SubResource("Steel")
-size = Vector3(320, 35, 45)
-[sub_resource type="BoxShape3D" id="Shape1"]
-size = Vector3(320, 35, 45)
-[sub_resource type="BoxMesh" id="Mesh2"]
-material = SubResource("Orange")
-size = Vector3(55, 220, 60)
-[sub_resource type="BoxShape3D" id="Shape2"]
-size = Vector3(55, 220, 60)
-[sub_resource type="BoxMesh" id="Mesh3"]
-material = SubResource("Teal")
-size = Vector3(270, 55, 140)
-[sub_resource type="BoxShape3D" id="Shape3"]
-size = Vector3(270, 55, 140)
-[sub_resource type="BoxMesh" id="Mesh4"]
-material = SubResource("Orange")
-size = Vector3(22, 75, 22)
-[sub_resource type="BoxShape3D" id="Shape4"]
-size = Vector3(22, 75, 22)
-[sub_resource type="BoxMesh" id="Mesh5"]
-material = SubResource("Teal")
-size = Vector3(22, 75, 22)
-[sub_resource type="BoxShape3D" id="Shape5"]
-size = Vector3(22, 75, 22)
-[sub_resource type="BoxMesh" id="Mesh6"]
-material = SubResource("Steel")
-size = Vector3(90, 14, 18)
-[sub_resource type="BoxShape3D" id="Shape6"]
-size = Vector3(90, 14, 18)
-[sub_resource type="BoxMesh" id="Mesh7"]
-material = SubResource("Orange")
-size = Vector3(35, 100, 35)
-[sub_resource type="BoxShape3D" id="Shape7"]
-size = Vector3(35, 100, 35)
-[sub_resource type="BoxMesh" id="Mesh8"]
-material = SubResource("Teal")
-size = Vector3(35, 100, 35)
-[sub_resource type="BoxShape3D" id="Shape8"]
-size = Vector3(35, 100, 35)
-[sub_resource type="BoxMesh" id="Mesh9"]
-material = SubResource("Orange")
-size = Vector3(90, 90, 90)
-[sub_resource type="BoxShape3D" id="Shape9"]
-size = Vector3(90, 90, 90)
-[sub_resource type="BoxMesh" id="Mesh10"]
-material = SubResource("Steel")
-size = Vector3(180, 25, 90)
-[sub_resource type="BoxShape3D" id="Shape10"]
-size = Vector3(180, 25, 90)
-[sub_resource type="BoxMesh" id="Mesh11"]
-material = SubResource("Teal")
-size = Vector3(130, 200, 80)
-[sub_resource type="BoxShape3D" id="Shape11"]
-size = Vector3(130, 200, 80)
+[sub_resource type="StandardMaterial3D" id="StarMaterial"]
+shading_mode = 0
+albedo_color = Color(1, 0.88, 0.57, 1)
+[sub_resource type="SphereMesh" id="StarMesh"]
+material = SubResource("StarMaterial")
+radius = 650.0
+height = 1300.0
+radial_segments = 24
+rings = 12
 
 [node name="FlightPlayground" type="Control"]
 layout_mode = 3
@@ -110,86 +51,18 @@ render_target_update_mode = 4
 [node name="Environment" type="WorldEnvironment" parent="GameViewport/World"]
 environment = SubResource("Space")
 [node name="Sun" type="DirectionalLight3D" parent="GameViewport/World"]
-rotation_degrees = Vector3(-30, -35, 0)
+rotation_degrees = Vector3(-22, -145, 0)
 light_color = Color(1, 0.87, 0.72, 1)
-light_energy = 1.3
+light_energy = 2.0
 [node name="PlayerShip" parent="GameViewport/World" instance=ExtResource("2")]
+[node name="NearbyStar" type="MeshInstance3D" parent="GameViewport/World"]
+position = Vector3(8500, 5200, -12000)
+mesh = SubResource("StarMesh")
+cast_shadow = 0
 [node name="Planet" type="MeshInstance3D" parent="GameViewport/World"]
 position = Vector3(-6500, 3200, -15000)
 mesh = SubResource("PlanetMesh")
-[node name="Landmarks" type="Node3D" parent="GameViewport/World"]
-[node name="StationCore" type="StaticBody3D" parent="GameViewport/World/Landmarks"]
-position = Vector3(420, 70, -1900)
-[node name="Mesh" type="MeshInstance3D" parent="GameViewport/World/Landmarks/StationCore"]
-mesh = SubResource("Mesh0")
-[node name="Collision" type="CollisionShape3D" parent="GameViewport/World/Landmarks/StationCore"]
-shape = SubResource("Shape0")
-[node name="StationArm" type="StaticBody3D" parent="GameViewport/World/Landmarks"]
-position = Vector3(650, 70, -1900)
-[node name="Mesh" type="MeshInstance3D" parent="GameViewport/World/Landmarks/StationArm"]
-mesh = SubResource("Mesh1")
-[node name="Collision" type="CollisionShape3D" parent="GameViewport/World/Landmarks/StationArm"]
-shape = SubResource("Shape1")
-[node name="StationTower" type="StaticBody3D" parent="GameViewport/World/Landmarks"]
-position = Vector3(795, 150, -1900)
-[node name="Mesh" type="MeshInstance3D" parent="GameViewport/World/Landmarks/StationTower"]
-mesh = SubResource("Mesh2")
-[node name="Collision" type="CollisionShape3D" parent="GameViewport/World/Landmarks/StationTower"]
-shape = SubResource("Shape2")
-[node name="StationCargo" type="StaticBody3D" parent="GameViewport/World/Landmarks"]
-position = Vector3(365, -85, -1900)
-[node name="Mesh" type="MeshInstance3D" parent="GameViewport/World/Landmarks/StationCargo"]
-mesh = SubResource("Mesh3")
-[node name="Collision" type="CollisionShape3D" parent="GameViewport/World/Landmarks/StationCargo"]
-shape = SubResource("Shape3")
-[node name="NearLeft" type="StaticBody3D" parent="GameViewport/World/Landmarks"]
-position = Vector3(-95, 0, -300)
-[node name="Mesh" type="MeshInstance3D" parent="GameViewport/World/Landmarks/NearLeft"]
-mesh = SubResource("Mesh4")
-[node name="Collision" type="CollisionShape3D" parent="GameViewport/World/Landmarks/NearLeft"]
-shape = SubResource("Shape4")
-[node name="NearRight" type="StaticBody3D" parent="GameViewport/World/Landmarks"]
-position = Vector3(95, 0, -300)
-[node name="Mesh" type="MeshInstance3D" parent="GameViewport/World/Landmarks/NearRight"]
-mesh = SubResource("Mesh5")
-[node name="Collision" type="CollisionShape3D" parent="GameViewport/World/Landmarks/NearRight"]
-shape = SubResource("Shape5")
-[node name="UpperMarker" type="StaticBody3D" parent="GameViewport/World/Landmarks"]
-position = Vector3(0, 100, -550)
-[node name="Mesh" type="MeshInstance3D" parent="GameViewport/World/Landmarks/UpperMarker"]
-mesh = SubResource("Mesh6")
-[node name="Collision" type="CollisionShape3D" parent="GameViewport/World/Landmarks/UpperMarker"]
-shape = SubResource("Shape6")
-[node name="MidLeft" type="StaticBody3D" parent="GameViewport/World/Landmarks"]
-position = Vector3(-180, -60, -900)
-[node name="Mesh" type="MeshInstance3D" parent="GameViewport/World/Landmarks/MidLeft"]
-mesh = SubResource("Mesh7")
-[node name="Collision" type="CollisionShape3D" parent="GameViewport/World/Landmarks/MidLeft"]
-shape = SubResource("Shape7")
-[node name="MidRight" type="StaticBody3D" parent="GameViewport/World/Landmarks"]
-position = Vector3(180, -60, -900)
-[node name="Mesh" type="MeshInstance3D" parent="GameViewport/World/Landmarks/MidRight"]
-mesh = SubResource("Mesh8")
-[node name="Collision" type="CollisionShape3D" parent="GameViewport/World/Landmarks/MidRight"]
-shape = SubResource("Shape8")
-[node name="FarMarker" type="StaticBody3D" parent="GameViewport/World/Landmarks"]
-position = Vector3(-350, 120, -2200)
-[node name="Mesh" type="MeshInstance3D" parent="GameViewport/World/Landmarks/FarMarker"]
-mesh = SubResource("Mesh9")
-[node name="Collision" type="CollisionShape3D" parent="GameViewport/World/Landmarks/FarMarker"]
-shape = SubResource("Shape9")
-[node name="LowerMarker" type="StaticBody3D" parent="GameViewport/World/Landmarks"]
-position = Vector3(0, -200, -1300)
-[node name="Mesh" type="MeshInstance3D" parent="GameViewport/World/Landmarks/LowerMarker"]
-mesh = SubResource("Mesh10")
-[node name="Collision" type="CollisionShape3D" parent="GameViewport/World/Landmarks/LowerMarker"]
-shape = SubResource("Shape10")
-[node name="SideLandmark" type="StaticBody3D" parent="GameViewport/World/Landmarks"]
-position = Vector3(-600, -100, 100)
-[node name="Mesh" type="MeshInstance3D" parent="GameViewport/World/Landmarks/SideLandmark"]
-mesh = SubResource("Mesh11")
-[node name="Collision" type="CollisionShape3D" parent="GameViewport/World/Landmarks/SideLandmark"]
-shape = SubResource("Shape11")
+[node name="BlockBelt" parent="GameViewport/World" instance=ExtResource("5")]
 [node name="HUDLayer" type="CanvasLayer" parent="GameViewport"]
 [node name="FlightHUD" parent="GameViewport/HUDLayer" node_paths=PackedStringArray("player") instance=ExtResource("3")]
 player = NodePath("../../World/PlayerShip")

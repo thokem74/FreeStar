@@ -262,8 +262,8 @@ Good example:
 
 ```gdscript
 # Convert the mouse offset from the HUD reticle into a desired local
-# pitch/yaw rate. The ship rotates toward that direction gradually so
-# mouse flight feels responsive without snapping directly to the cursor.
+# pitch/yaw rate. The ship responds gradually so mouse flight feels
+# responsive without snapping directly to the steering indicator.
 func update_mouse_steering(delta: float) -> void:
     ...
 ```
@@ -526,10 +526,10 @@ The baseline control style is mouse-driven flight.
 
 General intent:
 
-- mouse controls desired pitch/yaw direction
+- mouse controls desired pitch/yaw rates; A/D controls roll
 - ship smoothly rotates toward the requested direction
-- keyboard controls throttle
-- keyboard may control roll
+- keyboard controls acceleration, braking and boost
+- releasing acceleration returns to cruise; braking to zero latches a stop
 - later auxiliary movement can be added where useful
 - aiming should remain readable during combat
 
@@ -1517,8 +1517,10 @@ Prefer named Godot input actions.
 Possible actions:
 
 ```text
-throttle_up
-throttle_down
+accelerate
+brake_reverse
+boost
+mouse_roll
 roll_left
 roll_right
 fire_primary
@@ -1544,14 +1546,14 @@ Prefer:
 - large readable indicators
 - simple shapes
 - clear target markers
-- clear speed and throttle information
+- clear speed and flight-mode information
 - retro aesthetic
 
 The HUD may eventually communicate:
 
 ```text
 speed
-throttle
+flight mode
 target
 target range
 shield
@@ -1591,7 +1593,7 @@ Verify:
 
 - scene starts correctly
 - movement starts
-- throttle works
+- acceleration, cruise, braking and boost work
 - acceleration works
 - deceleration works
 - mouse turning works
@@ -1809,10 +1811,10 @@ Create a runnable playground where the player can judge whether basic first-pers
 - reusable player ship scene
 - first-person camera
 - mouse steering
-- throttle
+- acceleration, cruise, braking and boost
 - acceleration
 - deceleration
-- keyboard roll
+- mouse pitch/yaw and keyboard roll
 - speed cap
 - basic HUD
 - retro rendering foundation
@@ -1834,14 +1836,14 @@ At minimum display:
 
 - aiming reticle
 - current speed
-- current throttle
+- current flight mode
 
 ## Success Criteria
 
 - project launches directly into a playable scene
 - player can immediately fly
 - mouse steering feels smooth and understandable
-- throttle behaves predictably
+- acceleration, return to cruise, braking and boost behave predictably
 - acceleration and deceleration are readable
 - speed cap is enforced
 - roll works
@@ -1852,17 +1854,32 @@ At minimum display:
 
 ## Agreed Flight Playground Defaults
 
-- Mouse-offset steering with a bounded reticle; non-inverted pitch by default.
-- W/S adjusts persistent throttle, Q/E rolls, Space requests a normal stop.
-- C centers steering, R restores the safe spawn, Esc pauses and releases the mouse.
-- Left click resumes with centered steering; losing focus pauses flight.
+- No Man's Sky-inspired arcade controls: mouse-offset pitch/yaw with a bounded
+  steering reticle and non-inverted pitch; A/D rolls.
+- W accelerates, Left Shift boosts; S brakes through zero, then reverses while held.
+- Space does nothing. No Q/E or R/F thrust. Hold RMB to use horizontal reticle
+  offset for roll instead of yaw; pitch remains available and A/D roll combines
+  with mouse roll within the rate cap. Modifier transitions clear horizontal
+  offset and residual yaw/roll, retaining pitch.
+- Start stationary. W or Shift activates flight; release returns to cruise.
+- S overrides acceleration/boost. Releasing S completes a stop without cruise;
+  W/Shift can cancel stopping after S is released. Direction changes stop at zero
+  before accelerating the opposite way. Shift takes priority over W.
+- Initial speeds: 150 m/s cruise, 600 m/s normal maximum, 1,200 m/s boost maximum.
+- Acceleration: 200 m/s² normal, 400 m/s² boost. Automatic deceleration: 300 m/s²;
+  braking/direction changes: 600 m/s². Reverse maximum: 150 m/s; reverse acceleration:
+  200 m/s². No automatic banking or boost energy system.
+- Boost retains steering authority and is local flight, not milestone 0.4 Supercruise.
+- C centers steering; Home resets position, speed, rotation requests and cruise state.
+- Esc/focus loss pauses flight; left click resumes with centered steering and
+  preserved stopped/cruise state.
+- HUD shows actual movement speed and STOPPED, CRUISE, ACCELERATING, BRAKING, BOOST or REVERSING.
 - Solid local landmarks block and slide without damage; the distant planet is scenery.
-- Render the world and HUD at 854×480 with nearest-neighbor scaling and black bars.
-- Prefer integer scaling when it fits, proportional downscaling for smaller windows.
+- Render world/HUD at 854×480 with nearest-neighbor scaling and black bars.
+- Prefer integer enlargement, proportional downscaling for smaller windows.
 - Default window: 1708×960. Minimal cockpit framing leaves the center clear.
-- Initial tuning: 600 m/s cap, 100 m/s² acceleration, 150 m/s² deceleration,
-  50 throttle percentage points/s, 90°/s pitch/yaw, 100°/s roll, 80° camera FOV.
-- These values are inspector-exposed playtesting defaults.
+- Initial steering: 90°/s pitch/yaw, 100°/s roll, 80° camera FOV.
+- All gameplay values above are inspector-exposed playtesting defaults.
 
 ## Not Part of 0.1
 
