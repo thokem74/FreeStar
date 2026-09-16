@@ -10,7 +10,7 @@ Open `project.godot` in **Godot 4.7.x** and press F6 on the playground or F5 to 
 godot --path .
 ```
 
-The ship starts stationary facing a handcrafted test range. Orange and teal pylons show nearby motion; a station silhouette and distant planet help orientation. Local structures are solid but cause no damage.
+The ship starts stationary facing a handcrafted test range. A belt of 220 colorful, rotated blocks provides nearby motion cues; a warm star and distant planet help orientation. Local structures are solid but cause no damage.
 
 ## Controls
 
@@ -51,6 +51,8 @@ godot --headless --path . --script tests/flight_test.gd
 godot --path . --script tests/presentation_test.gd
 ```
 
-For hands-on testing, fly through the pylons, approach structures head-on and at an angle, try full-speed contact, reset, switch focus, and resize the window. Judge steering comfort, landmark visibility, and HUD readability interactively.
+For hands-on testing, fly between the belt blocks, approach structures head-on and at an angle, try full-speed contact, reset, switch focus, and resize the window. Judge steering comfort, landmark visibility, and HUD readability interactively.
 
 Project design and milestone scope live in [AGENTS.md](AGENTS.md).
+
+The block belt is a fixed, editor-editable scene with shared meshes/materials and matching solid box colliders. Its varied spacing leaves a clear initial approach. It does not generate or animate obstacles at runtime.

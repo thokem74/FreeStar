@@ -1,0 +1,1642 @@
+[gd_scene load_steps=35 format=3]
+
+[sub_resource type="BoxShape3D" id="Shape0"]
+size = Vector3(28, 32, 26)
+[sub_resource type="BoxShape3D" id="Shape1"]
+size = Vector3(55, 42, 48)
+[sub_resource type="BoxShape3D" id="Shape2"]
+size = Vector3(95, 75, 85)
+[sub_resource type="BoxShape3D" id="Shape3"]
+size = Vector3(145, 115, 130)
+[sub_resource type="StandardMaterial3D" id="Coral"]
+albedo_color = Color(0.95, 0.3, 0.22, 1)
+roughness = 1.0
+[sub_resource type="BoxMesh" id="Coral0"]
+material = SubResource("Coral")
+size = Vector3(28, 32, 26)
+[sub_resource type="BoxMesh" id="Coral1"]
+material = SubResource("Coral")
+size = Vector3(55, 42, 48)
+[sub_resource type="BoxMesh" id="Coral2"]
+material = SubResource("Coral")
+size = Vector3(95, 75, 85)
+[sub_resource type="BoxMesh" id="Coral3"]
+material = SubResource("Coral")
+size = Vector3(145, 115, 130)
+[sub_resource type="StandardMaterial3D" id="Gold"]
+albedo_color = Color(0.95, 0.66, 0.15, 1)
+roughness = 1.0
+[sub_resource type="BoxMesh" id="Gold0"]
+material = SubResource("Gold")
+size = Vector3(28, 32, 26)
+[sub_resource type="BoxMesh" id="Gold1"]
+material = SubResource("Gold")
+size = Vector3(55, 42, 48)
+[sub_resource type="BoxMesh" id="Gold2"]
+material = SubResource("Gold")
+size = Vector3(95, 75, 85)
+[sub_resource type="BoxMesh" id="Gold3"]
+material = SubResource("Gold")
+size = Vector3(145, 115, 130)
+[sub_resource type="StandardMaterial3D" id="Mint"]
+albedo_color = Color(0.24, 0.85, 0.57, 1)
+roughness = 1.0
+[sub_resource type="BoxMesh" id="Mint0"]
+material = SubResource("Mint")
+size = Vector3(28, 32, 26)
+[sub_resource type="BoxMesh" id="Mint1"]
+material = SubResource("Mint")
+size = Vector3(55, 42, 48)
+[sub_resource type="BoxMesh" id="Mint2"]
+material = SubResource("Mint")
+size = Vector3(95, 75, 85)
+[sub_resource type="BoxMesh" id="Mint3"]
+material = SubResource("Mint")
+size = Vector3(145, 115, 130)
+[sub_resource type="StandardMaterial3D" id="Cyan"]
+albedo_color = Color(0.18, 0.68, 0.94, 1)
+roughness = 1.0
+[sub_resource type="BoxMesh" id="Cyan0"]
+material = SubResource("Cyan")
+size = Vector3(28, 32, 26)
+[sub_resource type="BoxMesh" id="Cyan1"]
+material = SubResource("Cyan")
+size = Vector3(55, 42, 48)
+[sub_resource type="BoxMesh" id="Cyan2"]
+material = SubResource("Cyan")
+size = Vector3(95, 75, 85)
+[sub_resource type="BoxMesh" id="Cyan3"]
+material = SubResource("Cyan")
+size = Vector3(145, 115, 130)
+[sub_resource type="StandardMaterial3D" id="Violet"]
+albedo_color = Color(0.66, 0.37, 0.91, 1)
+roughness = 1.0
+[sub_resource type="BoxMesh" id="Violet0"]
+material = SubResource("Violet")
+size = Vector3(28, 32, 26)
+[sub_resource type="BoxMesh" id="Violet1"]
+material = SubResource("Violet")
+size = Vector3(55, 42, 48)
+[sub_resource type="BoxMesh" id="Violet2"]
+material = SubResource("Violet")
+size = Vector3(95, 75, 85)
+[sub_resource type="BoxMesh" id="Violet3"]
+material = SubResource("Violet")
+size = Vector3(145, 115, 130)
+[sub_resource type="StandardMaterial3D" id="Rose"]
+albedo_color = Color(0.94, 0.35, 0.62, 1)
+roughness = 1.0
+[sub_resource type="BoxMesh" id="Rose0"]
+material = SubResource("Rose")
+size = Vector3(28, 32, 26)
+[sub_resource type="BoxMesh" id="Rose1"]
+material = SubResource("Rose")
+size = Vector3(55, 42, 48)
+[sub_resource type="BoxMesh" id="Rose2"]
+material = SubResource("Rose")
+size = Vector3(95, 75, 85)
+[sub_resource type="BoxMesh" id="Rose3"]
+material = SubResource("Rose")
+size = Vector3(145, 115, 130)
+
+[node name="BlockBelt" type="Node3D"]
+[node name="Block001" type="StaticBody3D" parent="."]
+position = Vector3(1028.7, 623.81, -832.54)
+rotation_degrees = Vector3(-8.95, 12.51, -31.55)
+[node name="Mesh" type="MeshInstance3D" parent="Block001"]
+mesh = SubResource("Coral3")
+[node name="Collision" type="CollisionShape3D" parent="Block001"]
+shape = SubResource("Shape3")
+[node name="Block002" type="StaticBody3D" parent="."]
+position = Vector3(-731.14, -99.54, -5981.5)
+rotation_degrees = Vector3(-65.98, 48.88, 61.48)
+[node name="Mesh" type="MeshInstance3D" parent="Block002"]
+mesh = SubResource("Gold2")
+[node name="Collision" type="CollisionShape3D" parent="Block002"]
+shape = SubResource("Shape2")
+[node name="Block003" type="StaticBody3D" parent="."]
+position = Vector3(1056.94, -242.58, -3750.52)
+rotation_degrees = Vector3(-62.09, 57.15, 55.0)
+[node name="Mesh" type="MeshInstance3D" parent="Block003"]
+mesh = SubResource("Mint0")
+[node name="Collision" type="CollisionShape3D" parent="Block003"]
+shape = SubResource("Shape0")
+[node name="Block004" type="StaticBody3D" parent="."]
+position = Vector3(-663.49, -178.6, -3691.12)
+rotation_degrees = Vector3(-63.69, -65.88, -64.53)
+[node name="Mesh" type="MeshInstance3D" parent="Block004"]
+mesh = SubResource("Cyan0")
+[node name="Collision" type="CollisionShape3D" parent="Block004"]
+shape = SubResource("Shape0")
+[node name="Block005" type="StaticBody3D" parent="."]
+position = Vector3(-1468.26, -275.4, -4908.95)
+rotation_degrees = Vector3(-24.4, -26.65, -34.72)
+[node name="Mesh" type="MeshInstance3D" parent="Block005"]
+mesh = SubResource("Violet2")
+[node name="Collision" type="CollisionShape3D" parent="Block005"]
+shape = SubResource("Shape2")
+[node name="Block006" type="StaticBody3D" parent="."]
+position = Vector3(812.91, 309.65, -4425.14)
+rotation_degrees = Vector3(-41.62, 54.74, -34.48)
+[node name="Mesh" type="MeshInstance3D" parent="Block006"]
+mesh = SubResource("Rose1")
+[node name="Collision" type="CollisionShape3D" parent="Block006"]
+shape = SubResource("Shape1")
+[node name="Block007" type="StaticBody3D" parent="."]
+position = Vector3(-70.16, -67.23, -4420.13)
+rotation_degrees = Vector3(-69.88, 19.51, 60.04)
+[node name="Mesh" type="MeshInstance3D" parent="Block007"]
+mesh = SubResource("Coral3")
+[node name="Collision" type="CollisionShape3D" parent="Block007"]
+shape = SubResource("Shape3")
+[node name="Block008" type="StaticBody3D" parent="."]
+position = Vector3(-441.54, -258.19, -6193.55)
+rotation_degrees = Vector3(-29.46, -14.83, 10.63)
+[node name="Mesh" type="MeshInstance3D" parent="Block008"]
+mesh = SubResource("Gold2")
+[node name="Collision" type="CollisionShape3D" parent="Block008"]
+shape = SubResource("Shape2")
+[node name="Block009" type="StaticBody3D" parent="."]
+position = Vector3(-1333.53, -374.38, -3375.43)
+rotation_degrees = Vector3(-46.95, 55.2, 0.0)
+[node name="Mesh" type="MeshInstance3D" parent="Block009"]
+mesh = SubResource("Mint2")
+[node name="Collision" type="CollisionShape3D" parent="Block009"]
+shape = SubResource("Shape2")
+[node name="Block010" type="StaticBody3D" parent="."]
+position = Vector3(-322.35, -336.57, -2889.35)
+rotation_degrees = Vector3(17.34, 36.05, -33.62)
+[node name="Mesh" type="MeshInstance3D" parent="Block010"]
+mesh = SubResource("Cyan1")
+[node name="Collision" type="CollisionShape3D" parent="Block010"]
+shape = SubResource("Shape1")
+[node name="Block011" type="StaticBody3D" parent="."]
+position = Vector3(1650.44, 333.46, -5431.75)
+rotation_degrees = Vector3(-44.96, -33.22, 69.67)
+[node name="Mesh" type="MeshInstance3D" parent="Block011"]
+mesh = SubResource("Violet2")
+[node name="Collision" type="CollisionShape3D" parent="Block011"]
+shape = SubResource("Shape2")
+[node name="Block012" type="StaticBody3D" parent="."]
+position = Vector3(-213.37, 407.53, -3390.79)
+rotation_degrees = Vector3(8.79, 33.89, -22.36)
+[node name="Mesh" type="MeshInstance3D" parent="Block012"]
+mesh = SubResource("Rose0")
+[node name="Collision" type="CollisionShape3D" parent="Block012"]
+shape = SubResource("Shape0")
+[node name="Block013" type="StaticBody3D" parent="."]
+position = Vector3(327.48, 414.7, -2205.81)
+rotation_degrees = Vector3(-39.45, -57.24, -18.77)
+[node name="Mesh" type="MeshInstance3D" parent="Block013"]
+mesh = SubResource("Coral3")
+[node name="Collision" type="CollisionShape3D" parent="Block013"]
+shape = SubResource("Shape3")
+[node name="Block014" type="StaticBody3D" parent="."]
+position = Vector3(-197.07, -492.9, -3309.54)
+rotation_degrees = Vector3(49.03, 40.85, 18.28)
+[node name="Mesh" type="MeshInstance3D" parent="Block014"]
+mesh = SubResource("Gold3")
+[node name="Collision" type="CollisionShape3D" parent="Block014"]
+shape = SubResource("Shape3")
+[node name="Block015" type="StaticBody3D" parent="."]
+position = Vector3(1210.67, -140.62, -4009.35)
+rotation_degrees = Vector3(17.5, -15.91, -60.62)
+[node name="Mesh" type="MeshInstance3D" parent="Block015"]
+mesh = SubResource("Mint2")
+[node name="Collision" type="CollisionShape3D" parent="Block015"]
+shape = SubResource("Shape2")
+[node name="Block016" type="StaticBody3D" parent="."]
+position = Vector3(-1894.61, -189.62, -4904.91)
+rotation_degrees = Vector3(-58.73, -65.17, -15.59)
+[node name="Mesh" type="MeshInstance3D" parent="Block016"]
+mesh = SubResource("Cyan2")
+[node name="Collision" type="CollisionShape3D" parent="Block016"]
+shape = SubResource("Shape2")
+[node name="Block017" type="StaticBody3D" parent="."]
+position = Vector3(1338.63, 460.11, -1495.34)
+rotation_degrees = Vector3(-49.56, -60.52, -69.81)
+[node name="Mesh" type="MeshInstance3D" parent="Block017"]
+mesh = SubResource("Violet2")
+[node name="Collision" type="CollisionShape3D" parent="Block017"]
+shape = SubResource("Shape2")
+[node name="Block018" type="StaticBody3D" parent="."]
+position = Vector3(-1421.85, -460.36, -551.87)
+rotation_degrees = Vector3(-54.01, -38.98, -8.52)
+[node name="Mesh" type="MeshInstance3D" parent="Block018"]
+mesh = SubResource("Rose2")
+[node name="Collision" type="CollisionShape3D" parent="Block018"]
+shape = SubResource("Shape2")
+[node name="Block019" type="StaticBody3D" parent="."]
+position = Vector3(340.29, -138.72, -1954.11)
+rotation_degrees = Vector3(-29.07, 4.53, 39.08)
+[node name="Mesh" type="MeshInstance3D" parent="Block019"]
+mesh = SubResource("Coral3")
+[node name="Collision" type="CollisionShape3D" parent="Block019"]
+shape = SubResource("Shape3")
+[node name="Block020" type="StaticBody3D" parent="."]
+position = Vector3(1298.12, 478.37, -5184.04)
+rotation_degrees = Vector3(-52.27, -18.5, 32.46)
+[node name="Mesh" type="MeshInstance3D" parent="Block020"]
+mesh = SubResource("Gold1")
+[node name="Collision" type="CollisionShape3D" parent="Block020"]
+shape = SubResource("Shape1")
+[node name="Block021" type="StaticBody3D" parent="."]
+position = Vector3(322.44, 355.57, -5690.07)
+rotation_degrees = Vector3(-34.21, -35.29, 6.43)
+[node name="Mesh" type="MeshInstance3D" parent="Block021"]
+mesh = SubResource("Mint2")
+[node name="Collision" type="CollisionShape3D" parent="Block021"]
+shape = SubResource("Shape2")
+[node name="Block022" type="StaticBody3D" parent="."]
+position = Vector3(-134.18, -464.13, -2305.71)
+rotation_degrees = Vector3(25.82, 5.43, -50.83)
+[node name="Mesh" type="MeshInstance3D" parent="Block022"]
+mesh = SubResource("Cyan1")
+[node name="Collision" type="CollisionShape3D" parent="Block022"]
+shape = SubResource("Shape1")
+[node name="Block023" type="StaticBody3D" parent="."]
+position = Vector3(-1836.94, -868.09, -1450.11)
+rotation_degrees = Vector3(24.54, 48.6, -3.28)
+[node name="Mesh" type="MeshInstance3D" parent="Block023"]
+mesh = SubResource("Violet2")
+[node name="Collision" type="CollisionShape3D" parent="Block023"]
+shape = SubResource("Shape2")
+[node name="Block024" type="StaticBody3D" parent="."]
+position = Vector3(-1723.1, -73.02, -1114.35)
+rotation_degrees = Vector3(-67.77, 12.22, 10.15)
+[node name="Mesh" type="MeshInstance3D" parent="Block024"]
+mesh = SubResource("Rose2")
+[node name="Collision" type="CollisionShape3D" parent="Block024"]
+shape = SubResource("Shape2")
+[node name="Block025" type="StaticBody3D" parent="."]
+position = Vector3(741.57, 208.87, -2068.77)
+rotation_degrees = Vector3(-4.34, -54.15, 20.76)
+[node name="Mesh" type="MeshInstance3D" parent="Block025"]
+mesh = SubResource("Coral3")
+[node name="Collision" type="CollisionShape3D" parent="Block025"]
+shape = SubResource("Shape3")
+[node name="Block026" type="StaticBody3D" parent="."]
+position = Vector3(634.83, -131.84, -3645.09)
+rotation_degrees = Vector3(-41.75, 26.81, -6.5)
+[node name="Mesh" type="MeshInstance3D" parent="Block026"]
+mesh = SubResource("Gold0")
+[node name="Collision" type="CollisionShape3D" parent="Block026"]
+shape = SubResource("Shape0")
+[node name="Block027" type="StaticBody3D" parent="."]
+position = Vector3(636.03, 158.24, -582.92)
+rotation_degrees = Vector3(15.33, -47.2, 59.43)
+[node name="Mesh" type="MeshInstance3D" parent="Block027"]
+mesh = SubResource("Mint2")
+[node name="Collision" type="CollisionShape3D" parent="Block027"]
+shape = SubResource("Shape2")
+[node name="Block028" type="StaticBody3D" parent="."]
+position = Vector3(1052.12, 232.13, -2423.04)
+rotation_degrees = Vector3(-55.19, -39.15, -3.87)
+[node name="Mesh" type="MeshInstance3D" parent="Block028"]
+mesh = SubResource("Cyan3")
+[node name="Collision" type="CollisionShape3D" parent="Block028"]
+shape = SubResource("Shape3")
+[node name="Block029" type="StaticBody3D" parent="."]
+position = Vector3(-1656.27, 3.47, -527.14)
+rotation_degrees = Vector3(21.95, 42.91, -56.86)
+[node name="Mesh" type="MeshInstance3D" parent="Block029"]
+mesh = SubResource("Violet2")
+[node name="Collision" type="CollisionShape3D" parent="Block029"]
+shape = SubResource("Shape2")
+[node name="Block030" type="StaticBody3D" parent="."]
+position = Vector3(1184.33, -197.68, -5729.48)
+rotation_degrees = Vector3(33.74, -15.72, 61.2)
+[node name="Mesh" type="MeshInstance3D" parent="Block030"]
+mesh = SubResource("Rose3")
+[node name="Collision" type="CollisionShape3D" parent="Block030"]
+shape = SubResource("Shape3")
+[node name="Block031" type="StaticBody3D" parent="."]
+position = Vector3(-234.32, -35.95, -6007.31)
+rotation_degrees = Vector3(49.34, 64.78, -20.1)
+[node name="Mesh" type="MeshInstance3D" parent="Block031"]
+mesh = SubResource("Coral3")
+[node name="Collision" type="CollisionShape3D" parent="Block031"]
+shape = SubResource("Shape3")
+[node name="Block032" type="StaticBody3D" parent="."]
+position = Vector3(1163.23, -53.57, -5450.15)
+rotation_degrees = Vector3(-12.07, -47.71, 6.98)
+[node name="Mesh" type="MeshInstance3D" parent="Block032"]
+mesh = SubResource("Gold2")
+[node name="Collision" type="CollisionShape3D" parent="Block032"]
+shape = SubResource("Shape2")
+[node name="Block033" type="StaticBody3D" parent="."]
+position = Vector3(750.44, 210.29, -5362.18)
+rotation_degrees = Vector3(-7.08, -38.75, 54.17)
+[node name="Mesh" type="MeshInstance3D" parent="Block033"]
+mesh = SubResource("Mint0")
+[node name="Collision" type="CollisionShape3D" parent="Block033"]
+shape = SubResource("Shape0")
+[node name="Block034" type="StaticBody3D" parent="."]
+position = Vector3(-1344.21, -52.85, -1600.18)
+rotation_degrees = Vector3(47.07, -60.88, 67.03)
+[node name="Mesh" type="MeshInstance3D" parent="Block034"]
+mesh = SubResource("Cyan0")
+[node name="Collision" type="CollisionShape3D" parent="Block034"]
+shape = SubResource("Shape0")
+[node name="Block035" type="StaticBody3D" parent="."]
+position = Vector3(-1403.7, -635.98, -2179.2)
+rotation_degrees = Vector3(-47.19, 63.95, -56.91)
+[node name="Mesh" type="MeshInstance3D" parent="Block035"]
+mesh = SubResource("Violet1")
+[node name="Collision" type="CollisionShape3D" parent="Block035"]
+shape = SubResource("Shape1")
+[node name="Block036" type="StaticBody3D" parent="."]
+position = Vector3(42.78, -26.35, -2412.64)
+rotation_degrees = Vector3(-43.58, 31.01, 16.24)
+[node name="Mesh" type="MeshInstance3D" parent="Block036"]
+mesh = SubResource("Rose2")
+[node name="Collision" type="CollisionShape3D" parent="Block036"]
+shape = SubResource("Shape2")
+[node name="Block037" type="StaticBody3D" parent="."]
+position = Vector3(1835.48, 854.6, -4804.92)
+rotation_degrees = Vector3(18.7, -8.46, -2.92)
+[node name="Mesh" type="MeshInstance3D" parent="Block037"]
+mesh = SubResource("Coral2")
+[node name="Collision" type="CollisionShape3D" parent="Block037"]
+shape = SubResource("Shape2")
+[node name="Block038" type="StaticBody3D" parent="."]
+position = Vector3(1287.63, 608.31, -2549.21)
+rotation_degrees = Vector3(-20.53, -64.0, -26.76)
+[node name="Mesh" type="MeshInstance3D" parent="Block038"]
+mesh = SubResource("Gold3")
+[node name="Collision" type="CollisionShape3D" parent="Block038"]
+shape = SubResource("Shape3")
+[node name="Block039" type="StaticBody3D" parent="."]
+position = Vector3(961.61, 46.3, -5712.74)
+rotation_degrees = Vector3(18.24, -25.48, -46.91)
+[node name="Mesh" type="MeshInstance3D" parent="Block039"]
+mesh = SubResource("Mint1")
+[node name="Collision" type="CollisionShape3D" parent="Block039"]
+shape = SubResource("Shape1")
+[node name="Block040" type="StaticBody3D" parent="."]
+position = Vector3(1687.71, 280.14, -3306.69)
+rotation_degrees = Vector3(-47.11, 37.92, -11.07)
+[node name="Mesh" type="MeshInstance3D" parent="Block040"]
+mesh = SubResource("Cyan2")
+[node name="Collision" type="CollisionShape3D" parent="Block040"]
+shape = SubResource("Shape2")
+[node name="Block041" type="StaticBody3D" parent="."]
+position = Vector3(1615.67, 679.15, -5845.59)
+rotation_degrees = Vector3(-22.35, 11.74, 54.79)
+[node name="Mesh" type="MeshInstance3D" parent="Block041"]
+mesh = SubResource("Violet3")
+[node name="Collision" type="CollisionShape3D" parent="Block041"]
+shape = SubResource("Shape3")
+[node name="Block042" type="StaticBody3D" parent="."]
+position = Vector3(1041.7, 78.49, -2138.96)
+rotation_degrees = Vector3(-61.59, -59.68, -10.79)
+[node name="Mesh" type="MeshInstance3D" parent="Block042"]
+mesh = SubResource("Rose2")
+[node name="Collision" type="CollisionShape3D" parent="Block042"]
+shape = SubResource("Shape2")
+[node name="Block043" type="StaticBody3D" parent="."]
+position = Vector3(-944.5, -543.49, -3594.87)
+rotation_degrees = Vector3(-21.26, -62.73, 42.86)
+[node name="Mesh" type="MeshInstance3D" parent="Block043"]
+mesh = SubResource("Coral1")
+[node name="Collision" type="CollisionShape3D" parent="Block043"]
+shape = SubResource("Shape1")
+[node name="Block044" type="StaticBody3D" parent="."]
+position = Vector3(425.48, -175.14, -4161.48)
+rotation_degrees = Vector3(13.07, -28.36, 63.32)
+[node name="Mesh" type="MeshInstance3D" parent="Block044"]
+mesh = SubResource("Gold2")
+[node name="Collision" type="CollisionShape3D" parent="Block044"]
+shape = SubResource("Shape2")
+[node name="Block045" type="StaticBody3D" parent="."]
+position = Vector3(-651.2, 20.9, -3968.39)
+rotation_degrees = Vector3(18.15, 67.64, 14.75)
+[node name="Mesh" type="MeshInstance3D" parent="Block045"]
+mesh = SubResource("Mint3")
+[node name="Collision" type="CollisionShape3D" parent="Block045"]
+shape = SubResource("Shape3")
+[node name="Block046" type="StaticBody3D" parent="."]
+position = Vector3(-1321.78, -635.83, -5805.55)
+rotation_degrees = Vector3(52.94, 25.39, -44.84)
+[node name="Mesh" type="MeshInstance3D" parent="Block046"]
+mesh = SubResource("Cyan1")
+[node name="Collision" type="CollisionShape3D" parent="Block046"]
+shape = SubResource("Shape1")
+[node name="Block047" type="StaticBody3D" parent="."]
+position = Vector3(1105.17, 429.54, -4998.76)
+rotation_degrees = Vector3(-9.35, 31.45, 6.58)
+[node name="Mesh" type="MeshInstance3D" parent="Block047"]
+mesh = SubResource("Violet1")
+[node name="Collision" type="CollisionShape3D" parent="Block047"]
+shape = SubResource("Shape1")
+[node name="Block048" type="StaticBody3D" parent="."]
+position = Vector3(1416.85, 164.12, -3712.95)
+rotation_degrees = Vector3(-6.15, 37.86, -3.15)
+[node name="Mesh" type="MeshInstance3D" parent="Block048"]
+mesh = SubResource("Rose0")
+[node name="Collision" type="CollisionShape3D" parent="Block048"]
+shape = SubResource("Shape0")
+[node name="Block049" type="StaticBody3D" parent="."]
+position = Vector3(328.76, 296.28, -3343.98)
+rotation_degrees = Vector3(-63.86, -38.84, -59.32)
+[node name="Mesh" type="MeshInstance3D" parent="Block049"]
+mesh = SubResource("Coral1")
+[node name="Collision" type="CollisionShape3D" parent="Block049"]
+shape = SubResource("Shape1")
+[node name="Block050" type="StaticBody3D" parent="."]
+position = Vector3(323.28, 45.39, -6158.96)
+rotation_degrees = Vector3(-23.08, -35.92, 1.95)
+[node name="Mesh" type="MeshInstance3D" parent="Block050"]
+mesh = SubResource("Gold0")
+[node name="Collision" type="CollisionShape3D" parent="Block050"]
+shape = SubResource("Shape0")
+[node name="Block051" type="StaticBody3D" parent="."]
+position = Vector3(85.77, -169.69, -2205.49)
+rotation_degrees = Vector3(-34.31, 9.66, -45.24)
+[node name="Mesh" type="MeshInstance3D" parent="Block051"]
+mesh = SubResource("Mint2")
+[node name="Collision" type="CollisionShape3D" parent="Block051"]
+shape = SubResource("Shape2")
+[node name="Block052" type="StaticBody3D" parent="."]
+position = Vector3(-1897.86, -453.34, -6196.05)
+rotation_degrees = Vector3(17.85, 26.46, 29.86)
+[node name="Mesh" type="MeshInstance3D" parent="Block052"]
+mesh = SubResource("Cyan1")
+[node name="Collision" type="CollisionShape3D" parent="Block052"]
+shape = SubResource("Shape1")
+[node name="Block053" type="StaticBody3D" parent="."]
+position = Vector3(-1040.69, -699.79, -480.78)
+rotation_degrees = Vector3(68.96, -4.58, -37.86)
+[node name="Mesh" type="MeshInstance3D" parent="Block053"]
+mesh = SubResource("Violet1")
+[node name="Collision" type="CollisionShape3D" parent="Block053"]
+shape = SubResource("Shape1")
+[node name="Block054" type="StaticBody3D" parent="."]
+position = Vector3(-1587.98, -215.86, -4467.52)
+rotation_degrees = Vector3(-35.49, -32.62, 62.48)
+[node name="Mesh" type="MeshInstance3D" parent="Block054"]
+mesh = SubResource("Rose0")
+[node name="Collision" type="CollisionShape3D" parent="Block054"]
+shape = SubResource("Shape0")
+[node name="Block055" type="StaticBody3D" parent="."]
+position = Vector3(1198.46, 742.15, -5318.08)
+rotation_degrees = Vector3(-57.96, 9.91, 43.42)
+[node name="Mesh" type="MeshInstance3D" parent="Block055"]
+mesh = SubResource("Coral1")
+[node name="Collision" type="CollisionShape3D" parent="Block055"]
+shape = SubResource("Shape1")
+[node name="Block056" type="StaticBody3D" parent="."]
+position = Vector3(-1778.1, -106.51, -4048.85)
+rotation_degrees = Vector3(-60.42, -8.7, 36.98)
+[node name="Mesh" type="MeshInstance3D" parent="Block056"]
+mesh = SubResource("Gold0")
+[node name="Collision" type="CollisionShape3D" parent="Block056"]
+shape = SubResource("Shape0")
+[node name="Block057" type="StaticBody3D" parent="."]
+position = Vector3(667.0, 334.3, -3368.26)
+rotation_degrees = Vector3(-8.67, 52.03, -49.9)
+[node name="Mesh" type="MeshInstance3D" parent="Block057"]
+mesh = SubResource("Mint2")
+[node name="Collision" type="CollisionShape3D" parent="Block057"]
+shape = SubResource("Shape2")
+[node name="Block058" type="StaticBody3D" parent="."]
+position = Vector3(-64.11, -103.86, -3401.81)
+rotation_degrees = Vector3(63.14, -9.41, -61.37)
+[node name="Mesh" type="MeshInstance3D" parent="Block058"]
+mesh = SubResource("Cyan1")
+[node name="Collision" type="CollisionShape3D" parent="Block058"]
+shape = SubResource("Shape1")
+[node name="Block059" type="StaticBody3D" parent="."]
+position = Vector3(1645.02, 673.71, -3698.55)
+rotation_degrees = Vector3(-28.72, -5.79, 11.05)
+[node name="Mesh" type="MeshInstance3D" parent="Block059"]
+mesh = SubResource("Violet0")
+[node name="Collision" type="CollisionShape3D" parent="Block059"]
+shape = SubResource("Shape0")
+[node name="Block060" type="StaticBody3D" parent="."]
+position = Vector3(-987.92, -351.24, -3859.84)
+rotation_degrees = Vector3(8.45, -64.95, -55.89)
+[node name="Mesh" type="MeshInstance3D" parent="Block060"]
+mesh = SubResource("Rose0")
+[node name="Collision" type="CollisionShape3D" parent="Block060"]
+shape = SubResource("Shape0")
+[node name="Block061" type="StaticBody3D" parent="."]
+position = Vector3(-1504.22, -590.95, -4246.71)
+rotation_degrees = Vector3(-44.58, 58.09, 59.92)
+[node name="Mesh" type="MeshInstance3D" parent="Block061"]
+mesh = SubResource("Coral0")
+[node name="Collision" type="CollisionShape3D" parent="Block061"]
+shape = SubResource("Shape0")
+[node name="Block062" type="StaticBody3D" parent="."]
+position = Vector3(-1351.3, -376.22, -2881.03)
+rotation_degrees = Vector3(6.16, 14.87, -69.19)
+[node name="Mesh" type="MeshInstance3D" parent="Block062"]
+mesh = SubResource("Gold3")
+[node name="Collision" type="CollisionShape3D" parent="Block062"]
+shape = SubResource("Shape3")
+[node name="Block063" type="StaticBody3D" parent="."]
+position = Vector3(-1671.81, -272.81, -1302.53)
+rotation_degrees = Vector3(-2.45, 51.75, -62.73)
+[node name="Mesh" type="MeshInstance3D" parent="Block063"]
+mesh = SubResource("Mint2")
+[node name="Collision" type="CollisionShape3D" parent="Block063"]
+shape = SubResource("Shape2")
+[node name="Block064" type="StaticBody3D" parent="."]
+position = Vector3(-1798.32, -502.5, -5517.23)
+rotation_degrees = Vector3(12.89, -56.53, -22.06)
+[node name="Mesh" type="MeshInstance3D" parent="Block064"]
+mesh = SubResource("Cyan0")
+[node name="Collision" type="CollisionShape3D" parent="Block064"]
+shape = SubResource("Shape0")
+[node name="Block065" type="StaticBody3D" parent="."]
+position = Vector3(-588.37, 20.78, -2516.91)
+rotation_degrees = Vector3(13.51, 43.88, -19.77)
+[node name="Mesh" type="MeshInstance3D" parent="Block065"]
+mesh = SubResource("Violet3")
+[node name="Collision" type="CollisionShape3D" parent="Block065"]
+shape = SubResource("Shape3")
+[node name="Block066" type="StaticBody3D" parent="."]
+position = Vector3(1281.75, 344.85, -3566.77)
+rotation_degrees = Vector3(-0.17, -9.29, -16.96)
+[node name="Mesh" type="MeshInstance3D" parent="Block066"]
+mesh = SubResource("Rose1")
+[node name="Collision" type="CollisionShape3D" parent="Block066"]
+shape = SubResource("Shape1")
+[node name="Block067" type="StaticBody3D" parent="."]
+position = Vector3(-1283.9, 3.58, -3872.42)
+rotation_degrees = Vector3(65.18, -49.03, 66.41)
+[node name="Mesh" type="MeshInstance3D" parent="Block067"]
+mesh = SubResource("Coral3")
+[node name="Collision" type="CollisionShape3D" parent="Block067"]
+shape = SubResource("Shape3")
+[node name="Block068" type="StaticBody3D" parent="."]
+position = Vector3(1378.46, 275.94, -5459.94)
+rotation_degrees = Vector3(54.48, -45.57, 15.9)
+[node name="Mesh" type="MeshInstance3D" parent="Block068"]
+mesh = SubResource("Gold0")
+[node name="Collision" type="CollisionShape3D" parent="Block068"]
+shape = SubResource("Shape0")
+[node name="Block069" type="StaticBody3D" parent="."]
+position = Vector3(-217.04, -509.9, -1783.54)
+rotation_degrees = Vector3(-36.78, -49.56, 34.72)
+[node name="Mesh" type="MeshInstance3D" parent="Block069"]
+mesh = SubResource("Mint1")
+[node name="Collision" type="CollisionShape3D" parent="Block069"]
+shape = SubResource("Shape1")
+[node name="Block070" type="StaticBody3D" parent="."]
+position = Vector3(361.51, -264.45, -3271.29)
+rotation_degrees = Vector3(-60.98, -37.01, 63.22)
+[node name="Mesh" type="MeshInstance3D" parent="Block070"]
+mesh = SubResource("Cyan3")
+[node name="Collision" type="CollisionShape3D" parent="Block070"]
+shape = SubResource("Shape3")
+[node name="Block071" type="StaticBody3D" parent="."]
+position = Vector3(-1460.85, -708.37, -3515.24)
+rotation_degrees = Vector3(30.16, 64.04, -16.13)
+[node name="Mesh" type="MeshInstance3D" parent="Block071"]
+mesh = SubResource("Violet0")
+[node name="Collision" type="CollisionShape3D" parent="Block071"]
+shape = SubResource("Shape0")
+[node name="Block072" type="StaticBody3D" parent="."]
+position = Vector3(1814.15, 806.59, -2347.56)
+rotation_degrees = Vector3(0.94, -10.28, -33.72)
+[node name="Mesh" type="MeshInstance3D" parent="Block072"]
+mesh = SubResource("Rose0")
+[node name="Collision" type="CollisionShape3D" parent="Block072"]
+shape = SubResource("Shape0")
+[node name="Block073" type="StaticBody3D" parent="."]
+position = Vector3(-654.96, -434.5, -1513.42)
+rotation_degrees = Vector3(59.66, -44.8, 31.06)
+[node name="Mesh" type="MeshInstance3D" parent="Block073"]
+mesh = SubResource("Coral3")
+[node name="Collision" type="CollisionShape3D" parent="Block073"]
+shape = SubResource("Shape3")
+[node name="Block074" type="StaticBody3D" parent="."]
+position = Vector3(593.59, -231.02, -1001.86)
+rotation_degrees = Vector3(-64.48, 26.06, 15.26)
+[node name="Mesh" type="MeshInstance3D" parent="Block074"]
+mesh = SubResource("Gold3")
+[node name="Collision" type="CollisionShape3D" parent="Block074"]
+shape = SubResource("Shape3")
+[node name="Block075" type="StaticBody3D" parent="."]
+position = Vector3(1286.37, 438.19, -4444.46)
+rotation_degrees = Vector3(6.38, -27.98, 4.2)
+[node name="Mesh" type="MeshInstance3D" parent="Block075"]
+mesh = SubResource("Mint2")
+[node name="Collision" type="CollisionShape3D" parent="Block075"]
+shape = SubResource("Shape2")
+[node name="Block076" type="StaticBody3D" parent="."]
+position = Vector3(1677.61, -86.75, -1592.57)
+rotation_degrees = Vector3(-6.96, -23.23, 36.72)
+[node name="Mesh" type="MeshInstance3D" parent="Block076"]
+mesh = SubResource("Cyan2")
+[node name="Collision" type="CollisionShape3D" parent="Block076"]
+shape = SubResource("Shape2")
+[node name="Block077" type="StaticBody3D" parent="."]
+position = Vector3(-1652.1, 69.97, -1978.28)
+rotation_degrees = Vector3(62.24, 20.99, 62.57)
+[node name="Mesh" type="MeshInstance3D" parent="Block077"]
+mesh = SubResource("Violet2")
+[node name="Collision" type="CollisionShape3D" parent="Block077"]
+shape = SubResource("Shape2")
+[node name="Block078" type="StaticBody3D" parent="."]
+position = Vector3(-895.97, 232.12, -2566.26)
+rotation_degrees = Vector3(6.14, -28.44, -42.89)
+[node name="Mesh" type="MeshInstance3D" parent="Block078"]
+mesh = SubResource("Rose2")
+[node name="Collision" type="CollisionShape3D" parent="Block078"]
+shape = SubResource("Shape2")
+[node name="Block079" type="StaticBody3D" parent="."]
+position = Vector3(-310.99, -403.27, -1342.64)
+rotation_degrees = Vector3(47.35, -27.75, 58.81)
+[node name="Mesh" type="MeshInstance3D" parent="Block079"]
+mesh = SubResource("Coral3")
+[node name="Collision" type="CollisionShape3D" parent="Block079"]
+shape = SubResource("Shape3")
+[node name="Block080" type="StaticBody3D" parent="."]
+position = Vector3(-1779.25, -312.56, -307.9)
+rotation_degrees = Vector3(-30.14, 18.23, 42.79)
+[node name="Mesh" type="MeshInstance3D" parent="Block080"]
+mesh = SubResource("Gold2")
+[node name="Collision" type="CollisionShape3D" parent="Block080"]
+shape = SubResource("Shape2")
+[node name="Block081" type="StaticBody3D" parent="."]
+position = Vector3(1884.59, 477.49, -4616.71)
+rotation_degrees = Vector3(-26.19, -65.97, -45.51)
+[node name="Mesh" type="MeshInstance3D" parent="Block081"]
+mesh = SubResource("Mint0")
+[node name="Collision" type="CollisionShape3D" parent="Block081"]
+shape = SubResource("Shape0")
+[node name="Block082" type="StaticBody3D" parent="."]
+position = Vector3(1285.51, -10.4, -5212.13)
+rotation_degrees = Vector3(-19.39, 39.54, 48.15)
+[node name="Mesh" type="MeshInstance3D" parent="Block082"]
+mesh = SubResource("Cyan2")
+[node name="Collision" type="CollisionShape3D" parent="Block082"]
+shape = SubResource("Shape2")
+[node name="Block083" type="StaticBody3D" parent="."]
+position = Vector3(1028.47, 629.8, -2182.35)
+rotation_degrees = Vector3(61.06, -33.5, 15.25)
+[node name="Mesh" type="MeshInstance3D" parent="Block083"]
+mesh = SubResource("Violet2")
+[node name="Collision" type="CollisionShape3D" parent="Block083"]
+shape = SubResource("Shape2")
+[node name="Block084" type="StaticBody3D" parent="."]
+position = Vector3(-1834.16, -750.73, -918.22)
+rotation_degrees = Vector3(-24.38, -6.39, 61.6)
+[node name="Mesh" type="MeshInstance3D" parent="Block084"]
+mesh = SubResource("Rose1")
+[node name="Collision" type="CollisionShape3D" parent="Block084"]
+shape = SubResource("Shape1")
+[node name="Block085" type="StaticBody3D" parent="."]
+position = Vector3(-1040.09, -395.1, -3971.02)
+rotation_degrees = Vector3(58.4, -13.17, 41.49)
+[node name="Mesh" type="MeshInstance3D" parent="Block085"]
+mesh = SubResource("Coral2")
+[node name="Collision" type="CollisionShape3D" parent="Block085"]
+shape = SubResource("Shape2")
+[node name="Block086" type="StaticBody3D" parent="."]
+position = Vector3(1065.76, -153.12, -2963.66)
+rotation_degrees = Vector3(47.69, -47.78, -56.99)
+[node name="Mesh" type="MeshInstance3D" parent="Block086"]
+mesh = SubResource("Gold0")
+[node name="Collision" type="CollisionShape3D" parent="Block086"]
+shape = SubResource("Shape0")
+[node name="Block087" type="StaticBody3D" parent="."]
+position = Vector3(1177.35, 253.18, -4951.45)
+rotation_degrees = Vector3(58.19, -24.18, -59.92)
+[node name="Mesh" type="MeshInstance3D" parent="Block087"]
+mesh = SubResource("Mint2")
+[node name="Collision" type="CollisionShape3D" parent="Block087"]
+shape = SubResource("Shape2")
+[node name="Block088" type="StaticBody3D" parent="."]
+position = Vector3(973.36, 40.57, -5568.25)
+rotation_degrees = Vector3(35.67, 67.57, 60.99)
+[node name="Mesh" type="MeshInstance3D" parent="Block088"]
+mesh = SubResource("Cyan1")
+[node name="Collision" type="CollisionShape3D" parent="Block088"]
+shape = SubResource("Shape1")
+[node name="Block089" type="StaticBody3D" parent="."]
+position = Vector3(-342.25, -402.76, -813.09)
+rotation_degrees = Vector3(-66.81, 31.58, -47.11)
+[node name="Mesh" type="MeshInstance3D" parent="Block089"]
+mesh = SubResource("Violet2")
+[node name="Collision" type="CollisionShape3D" parent="Block089"]
+shape = SubResource("Shape2")
+[node name="Block090" type="StaticBody3D" parent="."]
+position = Vector3(-1402.01, -558.44, -3318.95)
+rotation_degrees = Vector3(-2.88, 61.83, 18.6)
+[node name="Mesh" type="MeshInstance3D" parent="Block090"]
+mesh = SubResource("Rose2")
+[node name="Collision" type="CollisionShape3D" parent="Block090"]
+shape = SubResource("Shape2")
+[node name="Block091" type="StaticBody3D" parent="."]
+position = Vector3(1308.82, 541.03, -3894.62)
+rotation_degrees = Vector3(61.61, 50.28, -54.89)
+[node name="Mesh" type="MeshInstance3D" parent="Block091"]
+mesh = SubResource("Coral2")
+[node name="Collision" type="CollisionShape3D" parent="Block091"]
+shape = SubResource("Shape2")
+[node name="Block092" type="StaticBody3D" parent="."]
+position = Vector3(183.05, 289.0, -498.51)
+rotation_degrees = Vector3(60.86, -26.17, -65.95)
+[node name="Mesh" type="MeshInstance3D" parent="Block092"]
+mesh = SubResource("Gold2")
+[node name="Collision" type="CollisionShape3D" parent="Block092"]
+shape = SubResource("Shape2")
+[node name="Block093" type="StaticBody3D" parent="."]
+position = Vector3(794.93, -41.03, -3556.57)
+rotation_degrees = Vector3(25.54, 48.32, 9.31)
+[node name="Mesh" type="MeshInstance3D" parent="Block093"]
+mesh = SubResource("Mint1")
+[node name="Collision" type="CollisionShape3D" parent="Block093"]
+shape = SubResource("Shape1")
+[node name="Block094" type="StaticBody3D" parent="."]
+position = Vector3(572.66, -255.2, -5359.31)
+rotation_degrees = Vector3(-44.93, 33.51, 25.1)
+[node name="Mesh" type="MeshInstance3D" parent="Block094"]
+mesh = SubResource("Cyan0")
+[node name="Collision" type="CollisionShape3D" parent="Block094"]
+shape = SubResource("Shape0")
+[node name="Block095" type="StaticBody3D" parent="."]
+position = Vector3(43.51, 273.18, -5941.43)
+rotation_degrees = Vector3(-52.3, 9.57, -62.94)
+[node name="Mesh" type="MeshInstance3D" parent="Block095"]
+mesh = SubResource("Violet1")
+[node name="Collision" type="CollisionShape3D" parent="Block095"]
+shape = SubResource("Shape1")
+[node name="Block096" type="StaticBody3D" parent="."]
+position = Vector3(-626.55, -579.24, -476.61)
+rotation_degrees = Vector3(-7.15, 41.83, 65.32)
+[node name="Mesh" type="MeshInstance3D" parent="Block096"]
+mesh = SubResource("Rose3")
+[node name="Collision" type="CollisionShape3D" parent="Block096"]
+shape = SubResource("Shape3")
+[node name="Block097" type="StaticBody3D" parent="."]
+position = Vector3(-1620.59, -115.72, -1231.33)
+rotation_degrees = Vector3(-21.87, -34.26, 41.3)
+[node name="Mesh" type="MeshInstance3D" parent="Block097"]
+mesh = SubResource("Coral1")
+[node name="Collision" type="CollisionShape3D" parent="Block097"]
+shape = SubResource("Shape1")
+[node name="Block098" type="StaticBody3D" parent="."]
+position = Vector3(1215.73, 229.47, -4752.74)
+rotation_degrees = Vector3(41.24, 9.37, -8.37)
+[node name="Mesh" type="MeshInstance3D" parent="Block098"]
+mesh = SubResource("Gold2")
+[node name="Collision" type="CollisionShape3D" parent="Block098"]
+shape = SubResource("Shape2")
+[node name="Block099" type="StaticBody3D" parent="."]
+position = Vector3(-1090.54, -483.16, -2622.55)
+rotation_degrees = Vector3(-56.7, 12.12, 53.04)
+[node name="Mesh" type="MeshInstance3D" parent="Block099"]
+mesh = SubResource("Mint3")
+[node name="Collision" type="CollisionShape3D" parent="Block099"]
+shape = SubResource("Shape3")
+[node name="Block100" type="StaticBody3D" parent="."]
+position = Vector3(875.93, 66.74, -4495.7)
+rotation_degrees = Vector3(5.93, -41.49, 62.72)
+[node name="Mesh" type="MeshInstance3D" parent="Block100"]
+mesh = SubResource("Cyan0")
+[node name="Collision" type="CollisionShape3D" parent="Block100"]
+shape = SubResource("Shape0")
+[node name="Block101" type="StaticBody3D" parent="."]
+position = Vector3(-1673.98, -595.91, -431.01)
+rotation_degrees = Vector3(-38.17, -12.32, -7.19)
+[node name="Mesh" type="MeshInstance3D" parent="Block101"]
+mesh = SubResource("Violet0")
+[node name="Collision" type="CollisionShape3D" parent="Block101"]
+shape = SubResource("Shape0")
+[node name="Block102" type="StaticBody3D" parent="."]
+position = Vector3(588.31, 210.46, -5880.23)
+rotation_degrees = Vector3(-44.14, 8.43, -65.96)
+[node name="Mesh" type="MeshInstance3D" parent="Block102"]
+mesh = SubResource("Rose1")
+[node name="Collision" type="CollisionShape3D" parent="Block102"]
+shape = SubResource("Shape1")
+[node name="Block103" type="StaticBody3D" parent="."]
+position = Vector3(1566.24, 417.95, -5925.17)
+rotation_degrees = Vector3(34.18, -39.21, -29.68)
+[node name="Mesh" type="MeshInstance3D" parent="Block103"]
+mesh = SubResource("Coral3")
+[node name="Collision" type="CollisionShape3D" parent="Block103"]
+shape = SubResource("Shape3")
+[node name="Block104" type="StaticBody3D" parent="."]
+position = Vector3(-590.5, -248.79, -2170.11)
+rotation_degrees = Vector3(22.24, 7.63, -15.69)
+[node name="Mesh" type="MeshInstance3D" parent="Block104"]
+mesh = SubResource("Gold3")
+[node name="Collision" type="CollisionShape3D" parent="Block104"]
+shape = SubResource("Shape3")
+[node name="Block105" type="StaticBody3D" parent="."]
+position = Vector3(596.22, 167.53, -3026.47)
+rotation_degrees = Vector3(-29.42, -31.73, 51.01)
+[node name="Mesh" type="MeshInstance3D" parent="Block105"]
+mesh = SubResource("Mint0")
+[node name="Collision" type="CollisionShape3D" parent="Block105"]
+shape = SubResource("Shape0")
+[node name="Block106" type="StaticBody3D" parent="."]
+position = Vector3(632.35, 251.9, -1905.76)
+rotation_degrees = Vector3(36.18, 23.47, -17.32)
+[node name="Mesh" type="MeshInstance3D" parent="Block106"]
+mesh = SubResource("Cyan1")
+[node name="Collision" type="CollisionShape3D" parent="Block106"]
+shape = SubResource("Shape1")
+[node name="Block107" type="StaticBody3D" parent="."]
+position = Vector3(641.66, 418.62, -1482.82)
+rotation_degrees = Vector3(-55.39, -49.29, -22.32)
+[node name="Mesh" type="MeshInstance3D" parent="Block107"]
+mesh = SubResource("Violet3")
+[node name="Collision" type="CollisionShape3D" parent="Block107"]
+shape = SubResource("Shape3")
+[node name="Block108" type="StaticBody3D" parent="."]
+position = Vector3(122.38, -307.27, -1124.16)
+rotation_degrees = Vector3(-14.51, 8.37, -34.69)
+[node name="Mesh" type="MeshInstance3D" parent="Block108"]
+mesh = SubResource("Rose0")
+[node name="Collision" type="CollisionShape3D" parent="Block108"]
+shape = SubResource("Shape0")
+[node name="Block109" type="StaticBody3D" parent="."]
+position = Vector3(1760.17, 186.33, -2139.67)
+rotation_degrees = Vector3(1.28, 43.83, 7.98)
+[node name="Mesh" type="MeshInstance3D" parent="Block109"]
+mesh = SubResource("Coral0")
+[node name="Collision" type="CollisionShape3D" parent="Block109"]
+shape = SubResource("Shape0")
+[node name="Block110" type="StaticBody3D" parent="."]
+position = Vector3(1894.02, 309.93, -5994.88)
+rotation_degrees = Vector3(56.65, -24.23, -50.31)
+[node name="Mesh" type="MeshInstance3D" parent="Block110"]
+mesh = SubResource("Gold2")
+[node name="Collision" type="CollisionShape3D" parent="Block110"]
+shape = SubResource("Shape2")
+[node name="Block111" type="StaticBody3D" parent="."]
+position = Vector3(858.29, 327.05, -2449.35)
+rotation_degrees = Vector3(-34.99, 9.88, -52.37)
+[node name="Mesh" type="MeshInstance3D" parent="Block111"]
+mesh = SubResource("Mint2")
+[node name="Collision" type="CollisionShape3D" parent="Block111"]
+shape = SubResource("Shape2")
+[node name="Block112" type="StaticBody3D" parent="."]
+position = Vector3(1498.93, 384.88, -4355.81)
+rotation_degrees = Vector3(-48.59, -3.16, -34.3)
+[node name="Mesh" type="MeshInstance3D" parent="Block112"]
+mesh = SubResource("Cyan3")
+[node name="Collision" type="CollisionShape3D" parent="Block112"]
+shape = SubResource("Shape3")
+[node name="Block113" type="StaticBody3D" parent="."]
+position = Vector3(1549.79, 24.52, -2454.37)
+rotation_degrees = Vector3(48.53, 55.86, 20.39)
+[node name="Mesh" type="MeshInstance3D" parent="Block113"]
+mesh = SubResource("Violet2")
+[node name="Collision" type="CollisionShape3D" parent="Block113"]
+shape = SubResource("Shape2")
+[node name="Block114" type="StaticBody3D" parent="."]
+position = Vector3(-1728.23, -673.31, -5446.63)
+rotation_degrees = Vector3(60.66, -5.7, -44.49)
+[node name="Mesh" type="MeshInstance3D" parent="Block114"]
+mesh = SubResource("Rose0")
+[node name="Collision" type="CollisionShape3D" parent="Block114"]
+shape = SubResource("Shape0")
+[node name="Block115" type="StaticBody3D" parent="."]
+position = Vector3(81.56, -168.55, -2602.11)
+rotation_degrees = Vector3(-49.5, -66.67, -34.35)
+[node name="Mesh" type="MeshInstance3D" parent="Block115"]
+mesh = SubResource("Coral1")
+[node name="Collision" type="CollisionShape3D" parent="Block115"]
+shape = SubResource("Shape1")
+[node name="Block116" type="StaticBody3D" parent="."]
+position = Vector3(-764.32, -421.01, -864.87)
+rotation_degrees = Vector3(37.01, -13.42, -7.77)
+[node name="Mesh" type="MeshInstance3D" parent="Block116"]
+mesh = SubResource("Gold0")
+[node name="Collision" type="CollisionShape3D" parent="Block116"]
+shape = SubResource("Shape0")
+[node name="Block117" type="StaticBody3D" parent="."]
+position = Vector3(645.73, 74.3, -3111.23)
+rotation_degrees = Vector3(-12.99, 43.92, 22.43)
+[node name="Mesh" type="MeshInstance3D" parent="Block117"]
+mesh = SubResource("Mint1")
+[node name="Collision" type="CollisionShape3D" parent="Block117"]
+shape = SubResource("Shape1")
+[node name="Block118" type="StaticBody3D" parent="."]
+position = Vector3(-259.5, -312.06, -1871.0)
+rotation_degrees = Vector3(-35.81, -28.26, -57.9)
+[node name="Mesh" type="MeshInstance3D" parent="Block118"]
+mesh = SubResource("Cyan2")
+[node name="Collision" type="CollisionShape3D" parent="Block118"]
+shape = SubResource("Shape2")
+[node name="Block119" type="StaticBody3D" parent="."]
+position = Vector3(-837.65, -512.12, -5405.47)
+rotation_degrees = Vector3(54.67, -37.99, -24.43)
+[node name="Mesh" type="MeshInstance3D" parent="Block119"]
+mesh = SubResource("Violet1")
+[node name="Collision" type="CollisionShape3D" parent="Block119"]
+shape = SubResource("Shape1")
+[node name="Block120" type="StaticBody3D" parent="."]
+position = Vector3(-677.75, 102.93, -4249.11)
+rotation_degrees = Vector3(36.89, -15.9, 8.74)
+[node name="Mesh" type="MeshInstance3D" parent="Block120"]
+mesh = SubResource("Rose2")
+[node name="Collision" type="CollisionShape3D" parent="Block120"]
+shape = SubResource("Shape2")
+[node name="Block121" type="StaticBody3D" parent="."]
+position = Vector3(678.88, -242.19, -2487.89)
+rotation_degrees = Vector3(-52.31, 41.5, 38.66)
+[node name="Mesh" type="MeshInstance3D" parent="Block121"]
+mesh = SubResource("Coral1")
+[node name="Collision" type="CollisionShape3D" parent="Block121"]
+shape = SubResource("Shape1")
+[node name="Block122" type="StaticBody3D" parent="."]
+position = Vector3(-532.36, 205.33, -453.56)
+rotation_degrees = Vector3(27.3, -68.0, -35.25)
+[node name="Mesh" type="MeshInstance3D" parent="Block122"]
+mesh = SubResource("Gold2")
+[node name="Collision" type="CollisionShape3D" parent="Block122"]
+shape = SubResource("Shape2")
+[node name="Block123" type="StaticBody3D" parent="."]
+position = Vector3(986.65, 268.5, -5286.86)
+rotation_degrees = Vector3(22.12, -47.56, 49.93)
+[node name="Mesh" type="MeshInstance3D" parent="Block123"]
+mesh = SubResource("Mint3")
+[node name="Collision" type="CollisionShape3D" parent="Block123"]
+shape = SubResource("Shape3")
+[node name="Block124" type="StaticBody3D" parent="."]
+position = Vector3(-797.61, -221.15, -3441.73)
+rotation_degrees = Vector3(-39.7, -47.23, 58.71)
+[node name="Mesh" type="MeshInstance3D" parent="Block124"]
+mesh = SubResource("Cyan0")
+[node name="Collision" type="CollisionShape3D" parent="Block124"]
+shape = SubResource("Shape0")
+[node name="Block125" type="StaticBody3D" parent="."]
+position = Vector3(-1818.2, -59.32, -5466.38)
+rotation_degrees = Vector3(1.85, -32.73, 34.48)
+[node name="Mesh" type="MeshInstance3D" parent="Block125"]
+mesh = SubResource("Violet0")
+[node name="Collision" type="CollisionShape3D" parent="Block125"]
+shape = SubResource("Shape0")
+[node name="Block126" type="StaticBody3D" parent="."]
+position = Vector3(1706.56, 547.41, -431.02)
+rotation_degrees = Vector3(-57.01, -51.28, -63.69)
+[node name="Mesh" type="MeshInstance3D" parent="Block126"]
+mesh = SubResource("Rose3")
+[node name="Collision" type="CollisionShape3D" parent="Block126"]
+shape = SubResource("Shape3")
+[node name="Block127" type="StaticBody3D" parent="."]
+position = Vector3(-429.89, -320.6, -5831.6)
+rotation_degrees = Vector3(21.63, -2.41, -57.43)
+[node name="Mesh" type="MeshInstance3D" parent="Block127"]
+mesh = SubResource("Coral3")
+[node name="Collision" type="CollisionShape3D" parent="Block127"]
+shape = SubResource("Shape3")
+[node name="Block128" type="StaticBody3D" parent="."]
+position = Vector3(1678.63, 298.78, -5194.45)
+rotation_degrees = Vector3(-61.32, -58.3, 12.84)
+[node name="Mesh" type="MeshInstance3D" parent="Block128"]
+mesh = SubResource("Gold1")
+[node name="Collision" type="CollisionShape3D" parent="Block128"]
+shape = SubResource("Shape1")
+[node name="Block129" type="StaticBody3D" parent="."]
+position = Vector3(-1705.83, -237.69, -5841.66)
+rotation_degrees = Vector3(3.87, 68.89, 18.19)
+[node name="Mesh" type="MeshInstance3D" parent="Block129"]
+mesh = SubResource("Mint2")
+[node name="Collision" type="CollisionShape3D" parent="Block129"]
+shape = SubResource("Shape2")
+[node name="Block130" type="StaticBody3D" parent="."]
+position = Vector3(1371.75, 102.57, -5961.56)
+rotation_degrees = Vector3(58.06, -30.04, 1.74)
+[node name="Mesh" type="MeshInstance3D" parent="Block130"]
+mesh = SubResource("Cyan1")
+[node name="Collision" type="CollisionShape3D" parent="Block130"]
+shape = SubResource("Shape1")
+[node name="Block131" type="StaticBody3D" parent="."]
+position = Vector3(-846.97, -518.53, -2495.54)
+rotation_degrees = Vector3(46.31, 59.78, -55.75)
+[node name="Mesh" type="MeshInstance3D" parent="Block131"]
+mesh = SubResource("Violet1")
+[node name="Collision" type="CollisionShape3D" parent="Block131"]
+shape = SubResource("Shape1")
+[node name="Block132" type="StaticBody3D" parent="."]
+position = Vector3(-1444.19, 130.9, -3845.74)
+rotation_degrees = Vector3(-51.15, -56.5, -68.91)
+[node name="Mesh" type="MeshInstance3D" parent="Block132"]
+mesh = SubResource("Rose1")
+[node name="Collision" type="CollisionShape3D" parent="Block132"]
+shape = SubResource("Shape1")
+[node name="Block133" type="StaticBody3D" parent="."]
+position = Vector3(-564.72, -568.27, -6057.71)
+rotation_degrees = Vector3(-18.53, -15.01, 48.28)
+[node name="Mesh" type="MeshInstance3D" parent="Block133"]
+mesh = SubResource("Coral3")
+[node name="Collision" type="CollisionShape3D" parent="Block133"]
+shape = SubResource("Shape3")
+[node name="Block134" type="StaticBody3D" parent="."]
+position = Vector3(1321.53, 182.83, -3331.93)
+rotation_degrees = Vector3(-5.59, 9.47, -8.45)
+[node name="Mesh" type="MeshInstance3D" parent="Block134"]
+mesh = SubResource("Gold1")
+[node name="Collision" type="CollisionShape3D" parent="Block134"]
+shape = SubResource("Shape1")
+[node name="Block135" type="StaticBody3D" parent="."]
+position = Vector3(386.54, 447.55, -5744.8)
+rotation_degrees = Vector3(22.32, 66.53, -54.98)
+[node name="Mesh" type="MeshInstance3D" parent="Block135"]
+mesh = SubResource("Mint0")
+[node name="Collision" type="CollisionShape3D" parent="Block135"]
+shape = SubResource("Shape0")
+[node name="Block136" type="StaticBody3D" parent="."]
+position = Vector3(-1362.31, -531.41, -5547.76)
+rotation_degrees = Vector3(44.73, -34.2, -62.09)
+[node name="Mesh" type="MeshInstance3D" parent="Block136"]
+mesh = SubResource("Cyan2")
+[node name="Collision" type="CollisionShape3D" parent="Block136"]
+shape = SubResource("Shape2")
+[node name="Block137" type="StaticBody3D" parent="."]
+position = Vector3(-261.74, 334.68, -3909.22)
+rotation_degrees = Vector3(63.63, 40.73, -47.13)
+[node name="Mesh" type="MeshInstance3D" parent="Block137"]
+mesh = SubResource("Violet3")
+[node name="Collision" type="CollisionShape3D" parent="Block137"]
+shape = SubResource("Shape3")
+[node name="Block138" type="StaticBody3D" parent="."]
+position = Vector3(-796.48, 9.85, -4860.92)
+rotation_degrees = Vector3(-13.0, -51.51, 30.61)
+[node name="Mesh" type="MeshInstance3D" parent="Block138"]
+mesh = SubResource("Rose1")
+[node name="Collision" type="CollisionShape3D" parent="Block138"]
+shape = SubResource("Shape1")
+[node name="Block139" type="StaticBody3D" parent="."]
+position = Vector3(-638.75, 79.12, -1740.56)
+rotation_degrees = Vector3(14.94, 5.24, -49.55)
+[node name="Mesh" type="MeshInstance3D" parent="Block139"]
+mesh = SubResource("Coral2")
+[node name="Collision" type="CollisionShape3D" parent="Block139"]
+shape = SubResource("Shape2")
+[node name="Block140" type="StaticBody3D" parent="."]
+position = Vector3(1060.57, -137.78, -3531.51)
+rotation_degrees = Vector3(-64.81, -51.62, 34.97)
+[node name="Mesh" type="MeshInstance3D" parent="Block140"]
+mesh = SubResource("Gold3")
+[node name="Collision" type="CollisionShape3D" parent="Block140"]
+shape = SubResource("Shape3")
+[node name="Block141" type="StaticBody3D" parent="."]
+position = Vector3(112.66, -424.3, -5113.86)
+rotation_degrees = Vector3(29.01, -69.69, -4.89)
+[node name="Mesh" type="MeshInstance3D" parent="Block141"]
+mesh = SubResource("Mint3")
+[node name="Collision" type="CollisionShape3D" parent="Block141"]
+shape = SubResource("Shape3")
+[node name="Block142" type="StaticBody3D" parent="."]
+position = Vector3(1445.75, 235.69, -3790.31)
+rotation_degrees = Vector3(9.3, 7.96, 61.77)
+[node name="Mesh" type="MeshInstance3D" parent="Block142"]
+mesh = SubResource("Cyan0")
+[node name="Collision" type="CollisionShape3D" parent="Block142"]
+shape = SubResource("Shape0")
+[node name="Block143" type="StaticBody3D" parent="."]
+position = Vector3(-1771.37, 2.65, -6147.28)
+rotation_degrees = Vector3(-15.57, -28.0, 10.12)
+[node name="Mesh" type="MeshInstance3D" parent="Block143"]
+mesh = SubResource("Violet3")
+[node name="Collision" type="CollisionShape3D" parent="Block143"]
+shape = SubResource("Shape3")
+[node name="Block144" type="StaticBody3D" parent="."]
+position = Vector3(-1048.06, -8.86, -4010.93)
+rotation_degrees = Vector3(48.37, 40.04, -37.47)
+[node name="Mesh" type="MeshInstance3D" parent="Block144"]
+mesh = SubResource("Rose0")
+[node name="Collision" type="CollisionShape3D" parent="Block144"]
+shape = SubResource("Shape0")
+[node name="Block145" type="StaticBody3D" parent="."]
+position = Vector3(779.57, 416.73, -5933.31)
+rotation_degrees = Vector3(9.96, 48.54, -51.0)
+[node name="Mesh" type="MeshInstance3D" parent="Block145"]
+mesh = SubResource("Coral1")
+[node name="Collision" type="CollisionShape3D" parent="Block145"]
+shape = SubResource("Shape1")
+[node name="Block146" type="StaticBody3D" parent="."]
+position = Vector3(-399.32, -84.18, -3617.44)
+rotation_degrees = Vector3(66.12, 38.56, -49.0)
+[node name="Mesh" type="MeshInstance3D" parent="Block146"]
+mesh = SubResource("Gold1")
+[node name="Collision" type="CollisionShape3D" parent="Block146"]
+shape = SubResource("Shape1")
+[node name="Block147" type="StaticBody3D" parent="."]
+position = Vector3(1422.17, 271.6, -1031.63)
+rotation_degrees = Vector3(48.07, 60.57, -63.21)
+[node name="Mesh" type="MeshInstance3D" parent="Block147"]
+mesh = SubResource("Mint2")
+[node name="Collision" type="CollisionShape3D" parent="Block147"]
+shape = SubResource("Shape2")
+[node name="Block148" type="StaticBody3D" parent="."]
+position = Vector3(1713.35, 694.96, -4881.62)
+rotation_degrees = Vector3(69.01, 19.77, -55.39)
+[node name="Mesh" type="MeshInstance3D" parent="Block148"]
+mesh = SubResource("Cyan0")
+[node name="Collision" type="CollisionShape3D" parent="Block148"]
+shape = SubResource("Shape0")
+[node name="Block149" type="StaticBody3D" parent="."]
+position = Vector3(-80.95, 446.66, -988.85)
+rotation_degrees = Vector3(-11.38, -17.31, -69.08)
+[node name="Mesh" type="MeshInstance3D" parent="Block149"]
+mesh = SubResource("Violet2")
+[node name="Collision" type="CollisionShape3D" parent="Block149"]
+shape = SubResource("Shape2")
+[node name="Block150" type="StaticBody3D" parent="."]
+position = Vector3(-249.42, -494.88, -5233.27)
+rotation_degrees = Vector3(39.06, 67.23, 27.58)
+[node name="Mesh" type="MeshInstance3D" parent="Block150"]
+mesh = SubResource("Rose2")
+[node name="Collision" type="CollisionShape3D" parent="Block150"]
+shape = SubResource("Shape2")
+[node name="Block151" type="StaticBody3D" parent="."]
+position = Vector3(-1331.38, -489.69, -5974.46)
+rotation_degrees = Vector3(-11.46, -32.7, 13.94)
+[node name="Mesh" type="MeshInstance3D" parent="Block151"]
+mesh = SubResource("Coral0")
+[node name="Collision" type="CollisionShape3D" parent="Block151"]
+shape = SubResource("Shape0")
+[node name="Block152" type="StaticBody3D" parent="."]
+position = Vector3(221.18, -314.13, -5871.22)
+rotation_degrees = Vector3(28.36, -31.29, -67.03)
+[node name="Mesh" type="MeshInstance3D" parent="Block152"]
+mesh = SubResource("Gold0")
+[node name="Collision" type="CollisionShape3D" parent="Block152"]
+shape = SubResource("Shape0")
+[node name="Block153" type="StaticBody3D" parent="."]
+position = Vector3(-1459.32, -363.49, -1415.49)
+rotation_degrees = Vector3(-4.45, 44.23, 63.53)
+[node name="Mesh" type="MeshInstance3D" parent="Block153"]
+mesh = SubResource("Mint0")
+[node name="Collision" type="CollisionShape3D" parent="Block153"]
+shape = SubResource("Shape0")
+[node name="Block154" type="StaticBody3D" parent="."]
+position = Vector3(-1579.16, -436.3, -3271.37)
+rotation_degrees = Vector3(-54.16, 10.26, 18.54)
+[node name="Mesh" type="MeshInstance3D" parent="Block154"]
+mesh = SubResource("Cyan2")
+[node name="Collision" type="CollisionShape3D" parent="Block154"]
+shape = SubResource("Shape2")
+[node name="Block155" type="StaticBody3D" parent="."]
+position = Vector3(1329.35, 661.46, -5575.13)
+rotation_degrees = Vector3(58.47, -30.43, -23.42)
+[node name="Mesh" type="MeshInstance3D" parent="Block155"]
+mesh = SubResource("Violet2")
+[node name="Collision" type="CollisionShape3D" parent="Block155"]
+shape = SubResource("Shape2")
+[node name="Block156" type="StaticBody3D" parent="."]
+position = Vector3(-730.03, -456.33, -4550.06)
+rotation_degrees = Vector3(32.03, -56.81, 43.64)
+[node name="Mesh" type="MeshInstance3D" parent="Block156"]
+mesh = SubResource("Rose0")
+[node name="Collision" type="CollisionShape3D" parent="Block156"]
+shape = SubResource("Shape0")
+[node name="Block157" type="StaticBody3D" parent="."]
+position = Vector3(1559.22, 71.39, -3561.53)
+rotation_degrees = Vector3(34.4, -54.87, -54.56)
+[node name="Mesh" type="MeshInstance3D" parent="Block157"]
+mesh = SubResource("Coral1")
+[node name="Collision" type="CollisionShape3D" parent="Block157"]
+shape = SubResource("Shape1")
+[node name="Block158" type="StaticBody3D" parent="."]
+position = Vector3(-560.83, 299.77, -3376.98)
+rotation_degrees = Vector3(23.53, 10.27, 64.75)
+[node name="Mesh" type="MeshInstance3D" parent="Block158"]
+mesh = SubResource("Gold0")
+[node name="Collision" type="CollisionShape3D" parent="Block158"]
+shape = SubResource("Shape0")
+[node name="Block159" type="StaticBody3D" parent="."]
+position = Vector3(-983.39, 14.5, -2252.63)
+rotation_degrees = Vector3(67.89, -15.86, 1.2)
+[node name="Mesh" type="MeshInstance3D" parent="Block159"]
+mesh = SubResource("Mint0")
+[node name="Collision" type="CollisionShape3D" parent="Block159"]
+shape = SubResource("Shape0")
+[node name="Block160" type="StaticBody3D" parent="."]
+position = Vector3(-369.67, -28.51, -1706.76)
+rotation_degrees = Vector3(25.99, -13.19, -34.19)
+[node name="Mesh" type="MeshInstance3D" parent="Block160"]
+mesh = SubResource("Cyan1")
+[node name="Collision" type="CollisionShape3D" parent="Block160"]
+shape = SubResource("Shape1")
+[node name="Block161" type="StaticBody3D" parent="."]
+position = Vector3(-253.55, 408.47, -5781.4)
+rotation_degrees = Vector3(51.29, -0.94, -22.57)
+[node name="Mesh" type="MeshInstance3D" parent="Block161"]
+mesh = SubResource("Violet3")
+[node name="Collision" type="CollisionShape3D" parent="Block161"]
+shape = SubResource("Shape3")
+[node name="Block162" type="StaticBody3D" parent="."]
+position = Vector3(-1637.56, -650.64, -1141.87)
+rotation_degrees = Vector3(-67.25, -25.83, 8.35)
+[node name="Mesh" type="MeshInstance3D" parent="Block162"]
+mesh = SubResource("Rose3")
+[node name="Collision" type="CollisionShape3D" parent="Block162"]
+shape = SubResource("Shape3")
+[node name="Block163" type="StaticBody3D" parent="."]
+position = Vector3(-1866.32, -422.78, -2400.41)
+rotation_degrees = Vector3(-63.76, -19.45, -49.69)
+[node name="Mesh" type="MeshInstance3D" parent="Block163"]
+mesh = SubResource("Coral2")
+[node name="Collision" type="CollisionShape3D" parent="Block163"]
+shape = SubResource("Shape2")
+[node name="Block164" type="StaticBody3D" parent="."]
+position = Vector3(143.27, 275.88, -2035.36)
+rotation_degrees = Vector3(66.86, -32.22, -59.1)
+[node name="Mesh" type="MeshInstance3D" parent="Block164"]
+mesh = SubResource("Gold2")
+[node name="Collision" type="CollisionShape3D" parent="Block164"]
+shape = SubResource("Shape2")
+[node name="Block165" type="StaticBody3D" parent="."]
+position = Vector3(795.07, 376.57, -4190.38)
+rotation_degrees = Vector3(49.63, -59.65, 44.48)
+[node name="Mesh" type="MeshInstance3D" parent="Block165"]
+mesh = SubResource("Mint2")
+[node name="Collision" type="CollisionShape3D" parent="Block165"]
+shape = SubResource("Shape2")
+[node name="Block166" type="StaticBody3D" parent="."]
+position = Vector3(759.48, 139.74, -361.72)
+rotation_degrees = Vector3(-62.9, -24.13, 46.2)
+[node name="Mesh" type="MeshInstance3D" parent="Block166"]
+mesh = SubResource("Cyan0")
+[node name="Collision" type="CollisionShape3D" parent="Block166"]
+shape = SubResource("Shape0")
+[node name="Block167" type="StaticBody3D" parent="."]
+position = Vector3(-1848.23, -733.72, -3514.35)
+rotation_degrees = Vector3(4.72, 42.65, 48.2)
+[node name="Mesh" type="MeshInstance3D" parent="Block167"]
+mesh = SubResource("Violet1")
+[node name="Collision" type="CollisionShape3D" parent="Block167"]
+shape = SubResource("Shape1")
+[node name="Block168" type="StaticBody3D" parent="."]
+position = Vector3(-550.35, 14.49, -5750.12)
+rotation_degrees = Vector3(-50.77, -16.78, -52.2)
+[node name="Mesh" type="MeshInstance3D" parent="Block168"]
+mesh = SubResource("Rose0")
+[node name="Collision" type="CollisionShape3D" parent="Block168"]
+shape = SubResource("Shape0")
+[node name="Block169" type="StaticBody3D" parent="."]
+position = Vector3(15.39, 177.3, -4358.09)
+rotation_degrees = Vector3(64.98, 15.44, -0.65)
+[node name="Mesh" type="MeshInstance3D" parent="Block169"]
+mesh = SubResource("Coral0")
+[node name="Collision" type="CollisionShape3D" parent="Block169"]
+shape = SubResource("Shape0")
+[node name="Block170" type="StaticBody3D" parent="."]
+position = Vector3(726.24, 530.89, -4633.18)
+rotation_degrees = Vector3(-45.94, -66.51, 66.12)
+[node name="Mesh" type="MeshInstance3D" parent="Block170"]
+mesh = SubResource("Gold0")
+[node name="Collision" type="CollisionShape3D" parent="Block170"]
+shape = SubResource("Shape0")
+[node name="Block171" type="StaticBody3D" parent="."]
+position = Vector3(493.71, 344.43, -5281.07)
+rotation_degrees = Vector3(-28.77, -20.15, 18.44)
+[node name="Mesh" type="MeshInstance3D" parent="Block171"]
+mesh = SubResource("Mint1")
+[node name="Collision" type="CollisionShape3D" parent="Block171"]
+shape = SubResource("Shape1")
+[node name="Block172" type="StaticBody3D" parent="."]
+position = Vector3(1111.22, 421.79, -2301.34)
+rotation_degrees = Vector3(18.99, 15.33, 58.27)
+[node name="Mesh" type="MeshInstance3D" parent="Block172"]
+mesh = SubResource("Cyan2")
+[node name="Collision" type="CollisionShape3D" parent="Block172"]
+shape = SubResource("Shape2")
+[node name="Block173" type="StaticBody3D" parent="."]
+position = Vector3(-373.46, -477.68, -2632.15)
+rotation_degrees = Vector3(-52.09, 44.26, -45.86)
+[node name="Mesh" type="MeshInstance3D" parent="Block173"]
+mesh = SubResource("Violet0")
+[node name="Collision" type="CollisionShape3D" parent="Block173"]
+shape = SubResource("Shape0")
+[node name="Block174" type="StaticBody3D" parent="."]
+position = Vector3(1610.84, 307.81, -2665.7)
+rotation_degrees = Vector3(-0.94, -25.94, -67.36)
+[node name="Mesh" type="MeshInstance3D" parent="Block174"]
+mesh = SubResource("Rose3")
+[node name="Collision" type="CollisionShape3D" parent="Block174"]
+shape = SubResource("Shape3")
+[node name="Block175" type="StaticBody3D" parent="."]
+position = Vector3(-1684.07, -493.86, -3138.1)
+rotation_degrees = Vector3(-17.12, -21.18, 0.86)
+[node name="Mesh" type="MeshInstance3D" parent="Block175"]
+mesh = SubResource("Coral2")
+[node name="Collision" type="CollisionShape3D" parent="Block175"]
+shape = SubResource("Shape2")
+[node name="Block176" type="StaticBody3D" parent="."]
+position = Vector3(730.66, 174.23, -1546.43)
+rotation_degrees = Vector3(40.41, 58.33, 37.61)
+[node name="Mesh" type="MeshInstance3D" parent="Block176"]
+mesh = SubResource("Gold3")
+[node name="Collision" type="CollisionShape3D" parent="Block176"]
+shape = SubResource("Shape3")
+[node name="Block177" type="StaticBody3D" parent="."]
+position = Vector3(-99.38, 292.61, -5001.39)
+rotation_degrees = Vector3(-33.97, 27.94, 5.88)
+[node name="Mesh" type="MeshInstance3D" parent="Block177"]
+mesh = SubResource("Mint0")
+[node name="Collision" type="CollisionShape3D" parent="Block177"]
+shape = SubResource("Shape0")
+[node name="Block178" type="StaticBody3D" parent="."]
+position = Vector3(283.84, -401.9, -5578.94)
+rotation_degrees = Vector3(45.08, 30.2, 48.24)
+[node name="Mesh" type="MeshInstance3D" parent="Block178"]
+mesh = SubResource("Cyan3")
+[node name="Collision" type="CollisionShape3D" parent="Block178"]
+shape = SubResource("Shape3")
+[node name="Block179" type="StaticBody3D" parent="."]
+position = Vector3(-1110.73, -659.56, -1549.18)
+rotation_degrees = Vector3(23.96, 58.68, 32.84)
+[node name="Mesh" type="MeshInstance3D" parent="Block179"]
+mesh = SubResource("Violet3")
+[node name="Collision" type="CollisionShape3D" parent="Block179"]
+shape = SubResource("Shape3")
+[node name="Block180" type="StaticBody3D" parent="."]
+position = Vector3(1723.6, 646.86, -1825.4)
+rotation_degrees = Vector3(-8.42, -44.68, 7.76)
+[node name="Mesh" type="MeshInstance3D" parent="Block180"]
+mesh = SubResource("Rose2")
+[node name="Collision" type="CollisionShape3D" parent="Block180"]
+shape = SubResource("Shape2")
+[node name="Block181" type="StaticBody3D" parent="."]
+position = Vector3(1500.64, 488.82, -4781.45)
+rotation_degrees = Vector3(-25.94, -5.6, -30.83)
+[node name="Mesh" type="MeshInstance3D" parent="Block181"]
+mesh = SubResource("Coral2")
+[node name="Collision" type="CollisionShape3D" parent="Block181"]
+shape = SubResource("Shape2")
+[node name="Block182" type="StaticBody3D" parent="."]
+position = Vector3(-82.89, 202.12, -2035.6)
+rotation_degrees = Vector3(1.86, -39.21, 2.97)
+[node name="Mesh" type="MeshInstance3D" parent="Block182"]
+mesh = SubResource("Gold3")
+[node name="Collision" type="CollisionShape3D" parent="Block182"]
+shape = SubResource("Shape3")
+[node name="Block183" type="StaticBody3D" parent="."]
+position = Vector3(-33.45, -454.82, -3876.02)
+rotation_degrees = Vector3(66.9, 58.52, 51.59)
+[node name="Mesh" type="MeshInstance3D" parent="Block183"]
+mesh = SubResource("Mint0")
+[node name="Collision" type="CollisionShape3D" parent="Block183"]
+shape = SubResource("Shape0")
+[node name="Block184" type="StaticBody3D" parent="."]
+position = Vector3(-356.24, 38.93, -5246.96)
+rotation_degrees = Vector3(29.82, 9.7, 2.77)
+[node name="Mesh" type="MeshInstance3D" parent="Block184"]
+mesh = SubResource("Cyan3")
+[node name="Collision" type="CollisionShape3D" parent="Block184"]
+shape = SubResource("Shape3")
+[node name="Block185" type="StaticBody3D" parent="."]
+position = Vector3(-1804.01, -716.42, -3909.4)
+rotation_degrees = Vector3(48.43, 21.19, -39.98)
+[node name="Mesh" type="MeshInstance3D" parent="Block185"]
+mesh = SubResource("Violet2")
+[node name="Collision" type="CollisionShape3D" parent="Block185"]
+shape = SubResource("Shape2")
+[node name="Block186" type="StaticBody3D" parent="."]
+position = Vector3(-166.9, 109.67, -5791.36)
+rotation_degrees = Vector3(57.35, 33.6, -21.04)
+[node name="Mesh" type="MeshInstance3D" parent="Block186"]
+mesh = SubResource("Rose3")
+[node name="Collision" type="CollisionShape3D" parent="Block186"]
+shape = SubResource("Shape3")
+[node name="Block187" type="StaticBody3D" parent="."]
+position = Vector3(1805.33, 105.52, -5819.85)
+rotation_degrees = Vector3(14.22, -43.81, -47.03)
+[node name="Mesh" type="MeshInstance3D" parent="Block187"]
+mesh = SubResource("Coral2")
+[node name="Collision" type="CollisionShape3D" parent="Block187"]
+shape = SubResource("Shape2")
+[node name="Block188" type="StaticBody3D" parent="."]
+position = Vector3(1785.3, -46.36, -4159.02)
+rotation_degrees = Vector3(-46.08, 48.2, -51.83)
+[node name="Mesh" type="MeshInstance3D" parent="Block188"]
+mesh = SubResource("Gold2")
+[node name="Collision" type="CollisionShape3D" parent="Block188"]
+shape = SubResource("Shape2")
+[node name="Block189" type="StaticBody3D" parent="."]
+position = Vector3(633.39, -115.44, -1328.9)
+rotation_degrees = Vector3(-14.04, 33.21, -43.05)
+[node name="Mesh" type="MeshInstance3D" parent="Block189"]
+mesh = SubResource("Mint3")
+[node name="Collision" type="CollisionShape3D" parent="Block189"]
+shape = SubResource("Shape3")
+[node name="Block190" type="StaticBody3D" parent="."]
+position = Vector3(1146.95, 699.45, -4352.88)
+rotation_degrees = Vector3(43.98, 38.06, -52.1)
+[node name="Mesh" type="MeshInstance3D" parent="Block190"]
+mesh = SubResource("Cyan0")
+[node name="Collision" type="CollisionShape3D" parent="Block190"]
+shape = SubResource("Shape0")
+[node name="Block191" type="StaticBody3D" parent="."]
+position = Vector3(1479.23, 212.74, -1954.4)
+rotation_degrees = Vector3(-51.5, 27.35, -27.66)
+[node name="Mesh" type="MeshInstance3D" parent="Block191"]
+mesh = SubResource("Violet1")
+[node name="Collision" type="CollisionShape3D" parent="Block191"]
+shape = SubResource("Shape1")
+[node name="Block192" type="StaticBody3D" parent="."]
+position = Vector3(1191.46, 229.66, -3693.4)
+rotation_degrees = Vector3(58.71, -69.53, 52.38)
+[node name="Mesh" type="MeshInstance3D" parent="Block192"]
+mesh = SubResource("Rose1")
+[node name="Collision" type="CollisionShape3D" parent="Block192"]
+shape = SubResource("Shape1")
+[node name="Block193" type="StaticBody3D" parent="."]
+position = Vector3(-1588.94, -95.67, -4845.91)
+rotation_degrees = Vector3(-6.17, -44.07, -65.24)
+[node name="Mesh" type="MeshInstance3D" parent="Block193"]
+mesh = SubResource("Coral1")
+[node name="Collision" type="CollisionShape3D" parent="Block193"]
+shape = SubResource("Shape1")
+[node name="Block194" type="StaticBody3D" parent="."]
+position = Vector3(-438.99, 224.85, -5752.25)
+rotation_degrees = Vector3(2.5, -41.41, 59.62)
+[node name="Mesh" type="MeshInstance3D" parent="Block194"]
+mesh = SubResource("Gold2")
+[node name="Collision" type="CollisionShape3D" parent="Block194"]
+shape = SubResource("Shape2")
+[node name="Block195" type="StaticBody3D" parent="."]
+position = Vector3(-1718.94, 30.8, -3075.89)
+rotation_degrees = Vector3(22.54, -56.06, -66.89)
+[node name="Mesh" type="MeshInstance3D" parent="Block195"]
+mesh = SubResource("Mint0")
+[node name="Collision" type="CollisionShape3D" parent="Block195"]
+shape = SubResource("Shape0")
+[node name="Block196" type="StaticBody3D" parent="."]
+position = Vector3(681.13, -33.45, -3913.0)
+rotation_degrees = Vector3(-46.63, 63.45, -53.22)
+[node name="Mesh" type="MeshInstance3D" parent="Block196"]
+mesh = SubResource("Cyan2")
+[node name="Collision" type="CollisionShape3D" parent="Block196"]
+shape = SubResource("Shape2")
+[node name="Block197" type="StaticBody3D" parent="."]
+position = Vector3(1081.7, 651.49, -5088.67)
+rotation_degrees = Vector3(-67.7, 52.91, 30.5)
+[node name="Mesh" type="MeshInstance3D" parent="Block197"]
+mesh = SubResource("Violet0")
+[node name="Collision" type="CollisionShape3D" parent="Block197"]
+shape = SubResource("Shape0")
+[node name="Block198" type="StaticBody3D" parent="."]
+position = Vector3(-1269.27, -106.79, -4512.69)
+rotation_degrees = Vector3(-23.27, 20.07, -65.01)
+[node name="Mesh" type="MeshInstance3D" parent="Block198"]
+mesh = SubResource("Rose3")
+[node name="Collision" type="CollisionShape3D" parent="Block198"]
+shape = SubResource("Shape3")
+[node name="Block199" type="StaticBody3D" parent="."]
+position = Vector3(543.63, 486.8, -6016.92)
+rotation_degrees = Vector3(54.23, -69.88, -18.61)
+[node name="Mesh" type="MeshInstance3D" parent="Block199"]
+mesh = SubResource("Coral0")
+[node name="Collision" type="CollisionShape3D" parent="Block199"]
+shape = SubResource("Shape0")
+[node name="Block200" type="StaticBody3D" parent="."]
+position = Vector3(1320.52, 152.0, -4003.35)
+rotation_degrees = Vector3(-45.83, -68.48, 66.43)
+[node name="Mesh" type="MeshInstance3D" parent="Block200"]
+mesh = SubResource("Gold2")
+[node name="Collision" type="CollisionShape3D" parent="Block200"]
+shape = SubResource("Shape2")
+[node name="Block201" type="StaticBody3D" parent="."]
+position = Vector3(577.33, 464.26, -4160.09)
+rotation_degrees = Vector3(44.88, -40.45, -65.04)
+[node name="Mesh" type="MeshInstance3D" parent="Block201"]
+mesh = SubResource("Mint0")
+[node name="Collision" type="CollisionShape3D" parent="Block201"]
+shape = SubResource("Shape0")
+[node name="Block202" type="StaticBody3D" parent="."]
+position = Vector3(1600.69, 533.68, -5210.34)
+rotation_degrees = Vector3(3.52, -40.46, 32.39)
+[node name="Mesh" type="MeshInstance3D" parent="Block202"]
+mesh = SubResource("Cyan3")
+[node name="Collision" type="CollisionShape3D" parent="Block202"]
+shape = SubResource("Shape3")
+[node name="Block203" type="StaticBody3D" parent="."]
+position = Vector3(231.31, -102.49, -3662.6)
+rotation_degrees = Vector3(-12.83, 20.64, -47.83)
+[node name="Mesh" type="MeshInstance3D" parent="Block203"]
+mesh = SubResource("Violet0")
+[node name="Collision" type="CollisionShape3D" parent="Block203"]
+shape = SubResource("Shape0")
+[node name="Block204" type="StaticBody3D" parent="."]
+position = Vector3(-1248.54, -304.82, -4947.95)
+rotation_degrees = Vector3(56.72, -53.33, 13.74)
+[node name="Mesh" type="MeshInstance3D" parent="Block204"]
+mesh = SubResource("Rose0")
+[node name="Collision" type="CollisionShape3D" parent="Block204"]
+shape = SubResource("Shape0")
+[node name="Block205" type="StaticBody3D" parent="."]
+position = Vector3(1521.01, 669.2, -625.22)
+rotation_degrees = Vector3(27.27, 23.26, -2.88)
+[node name="Mesh" type="MeshInstance3D" parent="Block205"]
+mesh = SubResource("Coral1")
+[node name="Collision" type="CollisionShape3D" parent="Block205"]
+shape = SubResource("Shape1")
+[node name="Block206" type="StaticBody3D" parent="."]
+position = Vector3(1204.23, -50.96, -4751.35)
+rotation_degrees = Vector3(12.43, -13.86, 21.39)
+[node name="Mesh" type="MeshInstance3D" parent="Block206"]
+mesh = SubResource("Gold3")
+[node name="Collision" type="CollisionShape3D" parent="Block206"]
+shape = SubResource("Shape3")
+[node name="Block207" type="StaticBody3D" parent="."]
+position = Vector3(83.77, 304.37, -5349.35)
+rotation_degrees = Vector3(46.93, 69.04, 53.79)
+[node name="Mesh" type="MeshInstance3D" parent="Block207"]
+mesh = SubResource("Mint3")
+[node name="Collision" type="CollisionShape3D" parent="Block207"]
+shape = SubResource("Shape3")
+[node name="Block208" type="StaticBody3D" parent="."]
+position = Vector3(-1237.94, 182.1, -4579.47)
+rotation_degrees = Vector3(4.71, -14.77, -42.28)
+[node name="Mesh" type="MeshInstance3D" parent="Block208"]
+mesh = SubResource("Cyan1")
+[node name="Collision" type="CollisionShape3D" parent="Block208"]
+shape = SubResource("Shape1")
+[node name="Block209" type="StaticBody3D" parent="."]
+position = Vector3(-1335.06, -667.5, -3479.9)
+rotation_degrees = Vector3(12.08, -38.42, -43.24)
+[node name="Mesh" type="MeshInstance3D" parent="Block209"]
+mesh = SubResource("Violet1")
+[node name="Collision" type="CollisionShape3D" parent="Block209"]
+shape = SubResource("Shape1")
+[node name="Block210" type="StaticBody3D" parent="."]
+position = Vector3(1675.9, 49.82, -3356.18)
+rotation_degrees = Vector3(25.69, 59.52, 29.87)
+[node name="Mesh" type="MeshInstance3D" parent="Block210"]
+mesh = SubResource("Rose3")
+[node name="Collision" type="CollisionShape3D" parent="Block210"]
+shape = SubResource("Shape3")
+[node name="Block211" type="StaticBody3D" parent="."]
+position = Vector3(-1236.39, -306.0, -5371.19)
+rotation_degrees = Vector3(63.03, 5.43, 26.89)
+[node name="Mesh" type="MeshInstance3D" parent="Block211"]
+mesh = SubResource("Coral3")
+[node name="Collision" type="CollisionShape3D" parent="Block211"]
+shape = SubResource("Shape3")
+[node name="Block212" type="StaticBody3D" parent="."]
+position = Vector3(1489.86, 105.64, -725.19)
+rotation_degrees = Vector3(-57.89, 27.57, -57.32)
+[node name="Mesh" type="MeshInstance3D" parent="Block212"]
+mesh = SubResource("Gold3")
+[node name="Collision" type="CollisionShape3D" parent="Block212"]
+shape = SubResource("Shape3")
+[node name="Block213" type="StaticBody3D" parent="."]
+position = Vector3(204.43, 416.81, -5857.98)
+rotation_degrees = Vector3(-44.33, -34.16, -13.53)
+[node name="Mesh" type="MeshInstance3D" parent="Block213"]
+mesh = SubResource("Mint3")
+[node name="Collision" type="CollisionShape3D" parent="Block213"]
+shape = SubResource("Shape3")
+[node name="Block214" type="StaticBody3D" parent="."]
+position = Vector3(1658.5, 500.7, -3009.31)
+rotation_degrees = Vector3(-32.31, -53.43, 21.14)
+[node name="Mesh" type="MeshInstance3D" parent="Block214"]
+mesh = SubResource("Cyan3")
+[node name="Collision" type="CollisionShape3D" parent="Block214"]
+shape = SubResource("Shape3")
+[node name="Block215" type="StaticBody3D" parent="."]
+position = Vector3(1342.71, 394.34, -5887.05)
+rotation_degrees = Vector3(-61.56, -51.68, -28.91)
+[node name="Mesh" type="MeshInstance3D" parent="Block215"]
+mesh = SubResource("Violet0")
+[node name="Collision" type="CollisionShape3D" parent="Block215"]
+shape = SubResource("Shape0")
+[node name="Block216" type="StaticBody3D" parent="."]
+position = Vector3(-1756.61, -324.12, -1757.06)
+rotation_degrees = Vector3(-18.13, 52.69, -25.46)
+[node name="Mesh" type="MeshInstance3D" parent="Block216"]
+mesh = SubResource("Rose3")
+[node name="Collision" type="CollisionShape3D" parent="Block216"]
+shape = SubResource("Shape3")
+[node name="Block217" type="StaticBody3D" parent="."]
+position = Vector3(158.65, 450.65, -5660.62)
+rotation_degrees = Vector3(39.32, 63.78, 64.41)
+[node name="Mesh" type="MeshInstance3D" parent="Block217"]
+mesh = SubResource("Coral1")
+[node name="Collision" type="CollisionShape3D" parent="Block217"]
+shape = SubResource("Shape1")
+[node name="Block218" type="StaticBody3D" parent="."]
+position = Vector3(-360.31, -193.36, -1188.4)
+rotation_degrees = Vector3(1.45, 48.74, -68.28)
+[node name="Mesh" type="MeshInstance3D" parent="Block218"]
+mesh = SubResource("Gold1")
+[node name="Collision" type="CollisionShape3D" parent="Block218"]
+shape = SubResource("Shape1")
+[node name="Block219" type="StaticBody3D" parent="."]
+position = Vector3(-1636.96, -54.31, -1363.21)
+rotation_degrees = Vector3(5.63, 44.9, -15.17)
+[node name="Mesh" type="MeshInstance3D" parent="Block219"]
+mesh = SubResource("Mint1")
+[node name="Collision" type="CollisionShape3D" parent="Block219"]
+shape = SubResource("Shape1")
+[node name="Block220" type="StaticBody3D" parent="."]
+position = Vector3(935.21, 168.89, -5554.84)
+rotation_degrees = Vector3(43.41, 8.33, -43.23)
+[node name="Mesh" type="MeshInstance3D" parent="Block220"]
+mesh = SubResource("Cyan0")
+[node name="Collision" type="CollisionShape3D" parent="Block220"]
+shape = SubResource("Shape0")
