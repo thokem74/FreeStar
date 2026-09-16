@@ -72,10 +72,10 @@ Do not invent alternate milestone names, prototype numbering schemes, phases, sl
 
 ```text
 0.1  Flight Playground
-0.2  Combat
-0.3  Docking
+0.2  Docking
+0.3  Station Services
 0.4  Supercruise
-0.5  Station Services
+0.5  Combat
 0.6  Missions
 0.7  Economy
 0.8  Procedural Systems
