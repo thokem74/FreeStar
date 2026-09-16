@@ -89,13 +89,17 @@ func _run() -> void:
 		for tick in 400:
 			if station.entrance.to_local(player.global_position).z > 30.0:
 				break
+			if station.contains(station.interior_volume, player.global_position):
+				_check(player.approach_speed_limit == 100.0, "Launch remains limited inside station")
 			await _ticks(1)
 		Input.action_release("accelerate")
 		_check(station.entrance.to_local(player.global_position).z > 30.0, "Manual exit is collision-free")
-		_check(docking.state == DockingCoordinator.State.LAUNCHING and player.approach_speed_limit == 100, "No immediate recapture")
+		_check(docking.state == DockingCoordinator.State.FLIGHT and player.approach_speed_limit == 0.0, "Station exit immediately restores normal flight")
+		_check(station.contains(station.approach_volume, player.global_position), "Restoration occurs inside approach zone")
+		_check(docking.cleared_station == null and docking.active_station == null, "Exit cannot immediately recapture")
 		_place(station, Vector3(0, 0, 1100), true)
 		await _ticks(2)
-		_check(docking.state == DockingCoordinator.State.FLIGHT and player.approach_speed_limit == 0.0, "Leaving approach restores flight")
+		_check(docking.state == DockingCoordinator.State.FLIGHT and player.approach_speed_limit == 0.0, "Normal flight persists beyond approach")
 		docking.request_clearance()
 		_check(docking.cleared_station == station, "Fresh clearance after launch")
 		_place(station, Vector3(0, 0, 2300))

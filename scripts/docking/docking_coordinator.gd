@@ -105,7 +105,10 @@ func _physics_process(delta: float) -> void:
 		_advance_autodock(delta)
 		return
 	if state == State.LAUNCHING:
-		if not active_station.contains(active_station.approach_volume, player.global_position):
+		# End launch assistance once the entire hull clears the station interior,
+		# even though the ship is still inside the inbound approach zone.
+		var radius: float = (hull.shape as SphereShape3D).radius
+		if not active_station.contains(active_station.interior_volume, player.global_position, -radius):
 			active_station = null
 			state = State.FLIGHT
 			player.set_approach_speed_limit(0.0)

@@ -71,7 +71,7 @@ Four stations surround the block belt on the horizontal X/Z plane. HUD markers s
 
 Press **F** within 2,000 m of an entrance for clearance. Fly through the highlighted entrance and follow the green guide lights. In the cleared 1,000 m approach zone, forward/reverse speed targets are capped at **100 m/s** and boost is disabled; excess speed decelerates smoothly. At full boost, begin braking before entering the zone: slowing from 1,200 to 100 m/s needs about 1,192 m at the current braking rate. Only the cleared station can capture you, deep inside its bay, aligned inward within 30° and moving at no more than 100 m/s.
 
-Autodock takes about two seconds and settles the ship facing the exit. The docked overlay shows the station name and **Launch**. Click Launch to regain control, stationary inside the bay; press W and fly out manually. Assistance ends outside the approach zone. New docking requires leaving and requesting clearance again.
+Autodock takes about two seconds and settles the ship facing the exit. The docked overlay shows the station name and **Launch**. Click Launch to regain control, stationary inside the bay; press W and fly out manually. The 100 m/s launch limit ends as soon as the whole ship clears the station interior; normal flight resumes immediately, even within the approach zone. New docking requires leaving and requesting clearance again.
 
 F again cancels clearance; requesting another eligible station transfers it. Clearance expires beyond 2,200 m. Entering through a wall or the service platform roof cannot dock you. Requesting from inside requires exiting and re-entering. Esc/focus loss pauses flight and autodocking. Home resets flight and docking from any state. Stations provide no services yet.
 

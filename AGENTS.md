@@ -1961,7 +1961,8 @@ Do not add:
 - Deep capture requires inward alignment within 30° and actual speed <=100 m/s.
   Autodock checks the collision path and settles over about two seconds, facing outward.
 - Docked overlay provides station identity and Launch only. Launch starts stationary
-  inside the berth for a manual exit. Assistance persists until outside the approach.
+  inside the berth for a manual exit. The 100 m/s launch limit ends when the whole hull clears the station interior,
+  restoring normal flight even within the inbound approach zone.
 - Launch cannot immediately recapture; a new clearance is required after exit.
 - Pause/focus loss freezes flight and autodock. Docked UI never resumes flight on
   an ordinary click. Home clears all docking state and resets the ship.
