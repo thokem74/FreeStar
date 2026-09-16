@@ -69,7 +69,7 @@ Four stations surround the block belt on the horizontal X/Z plane. HUD markers s
 | East — Cargo Terminal | (4200, 0, -3250) | Long cargo corridor |
 | West — Service Platform | (-4200, 0, -3250) | Horizontal entry into an open-top bay |
 
-Press **F** within 2,000 m of an entrance for clearance. Fly through the highlighted entrance and follow the green guide lights. In the cleared approach zone, forward/reverse speed targets are capped at **100 m/s** and boost is disabled; excess speed decelerates smoothly. Only the cleared station can capture you, deep inside its bay, aligned inward within 30° and moving at no more than 100 m/s.
+Press **F** within 2,000 m of an entrance for clearance. Fly through the highlighted entrance and follow the green guide lights. In the cleared 1,000 m approach zone, forward/reverse speed targets are capped at **100 m/s** and boost is disabled; excess speed decelerates smoothly. At full boost, begin braking before entering the zone: slowing from 1,200 to 100 m/s needs about 1,192 m at the current braking rate. Only the cleared station can capture you, deep inside its bay, aligned inward within 30° and moving at no more than 100 m/s.
 
 Autodock takes about two seconds and settles the ship facing the exit. The docked overlay shows the station name and **Launch**. Click Launch to regain control, stationary inside the bay; press W and fly out manually. Assistance ends outside the approach zone. New docking requires leaving and requesting clearance again.
 

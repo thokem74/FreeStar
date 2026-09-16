@@ -11,7 +11,7 @@ albedo_color = Color(0.35, 1, 0.75, 1)
 roughness = 1.0
 shading_mode = 0
 [sub_resource type="BoxShape3D" id="Approach"]
-size = Vector3(600, 600, 2200)
+size = Vector3(600, 600, 1600)
 [sub_resource type="BoxShape3D" id="Interior"]
 size = Vector3(100, 100, 500)
 [sub_resource type="BoxShape3D" id="Capture"]
@@ -198,7 +198,7 @@ entrance_half_size = Vector2(50.0, 50.0)
 position = Vector3(0, 0, -460)
 rotation_degrees = Vector3(0, 180, 0)
 [node name="Approach" type="Area3D" parent="."]
-position = Vector3(0, 0, 500.0)
+position = Vector3(0, 0, 200.0)
 collision_layer = 0
 collision_mask = 0
 monitoring = false

@@ -42,6 +42,8 @@ func _run() -> void:
 
 	for station in docking.stations:
 		print("Checking ", station.marker_name)
+		_check(station.contains(station.approach_volume, station.entrance.to_global(Vector3(0, 0, 999))), "Inside 1,000 m boundary")
+		_check(not station.contains(station.approach_volume, station.entrance.to_global(Vector3(0, 0, 1001))), "Outside 1,000 m boundary")
 		docking.reset_docking()
 		_place(station, Vector3(0, 0, 120))
 		await _ticks(2)
@@ -91,7 +93,7 @@ func _run() -> void:
 		Input.action_release("accelerate")
 		_check(station.entrance.to_local(player.global_position).z > 30.0, "Manual exit is collision-free")
 		_check(docking.state == DockingCoordinator.State.LAUNCHING and player.approach_speed_limit == 100, "No immediate recapture")
-		_place(station, Vector3(0, 0, 1700), true)
+		_place(station, Vector3(0, 0, 1100), true)
 		await _ticks(2)
 		_check(docking.state == DockingCoordinator.State.FLIGHT and player.approach_speed_limit == 0.0, "Leaving approach restores flight")
 		docking.request_clearance()
@@ -137,14 +139,14 @@ func _run() -> void:
 	_check(not docking._path_clear(station.capture_volume.global_position, station.berth.global_position), "Obstructed berth rejected")
 	blocker.queue_free()
 	docking.reset_docking()
-	_place(station, Vector3(0, 0, 1590))
-	player._forward_speed = player.boost_speed
+	_place(station, Vector3(0, 0, 990))
+	player._forward_speed = player.max_speed
 	await _ticks(2)
 	docking.request_clearance()
 	Input.action_press("boost")
 	await _ticks(120)
 	Input.action_release("boost")
-	_check(player.current_speed <= 100.1 and station.entrance.to_local(player.global_position).z > 0, "Boost approach slows safely before entrance")
+	_check(player.current_speed <= 100.1 and station.entrance.to_local(player.global_position).z > 0, "Normal-speed approach slows safely; boost remains disabled")
 	player._forward_speed = -150.0
 	await _ticks(10)
 	_check(absf(player._forward_speed) <= 100.1, "Reverse assistance cap")

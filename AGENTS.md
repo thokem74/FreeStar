@@ -1956,7 +1956,7 @@ Do not add:
   open-top platform at (-4200,0,-3250). Entrances face toward the belt.
 - F requests/cancels nearest-station clearance within 2,000 m; clearance is
   exclusive and revoked beyond 2,200 m. Entry through the marked aperture is required.
-- A 1,600 m approach zone limits forward/reverse targets to 100 m/s and disables
+- A 1,000 m approach zone limits forward/reverse targets to 100 m/s and disables
   boost while retaining manual steering. Excess speed decelerates normally at braking rate.
 - Deep capture requires inward alignment within 30° and actual speed <=100 m/s.
   Autodock checks the collision path and settles over about two seconds, facing outward.
